@@ -1,0 +1,48 @@
+---
+import Headline from "../Headline/Headline.astro";
+import SectionWrapper from "./SectionWrapper.astro";
+import type { Props as SectionWrapperProps } from "./SectionWrapper.astro";
+
+interface Props extends SectionWrapperProps {
+	title: string;
+	imgSrc: string;
+	imgAlt?: string;
+	imgClass?: string;
+	flipped?: boolean;
+}
+
+const {
+	title,
+	imgSrc,
+	imgAlt,
+	flipped,
+	class: className = "",
+	imgClass = "",
+	...props
+} = Astro.props;
+---
+
+<SectionWrapper class={"flex gap-5 justify-center" + className} {...props}>
+	<div class="grid gap-5 lg:grid-cols-2 lg:grid-rows-1 grid-rows-2 grid-cols-1">
+		<div
+			class:list={[
+				"self-center place-self-center",
+				{
+					"lg:order-1": flipped,
+				},
+			]}
+		>
+			<img
+				src={imgSrc}
+				class={"block object-cover lg:w-[35rem] lg:h-[35rem] " + imgClass}
+				alt={imgAlt ?? `image for ${title}`}
+			/>
+		</div>
+		<div class="text-slate-600">
+			<header class="mb-5">
+				<Headline variant="xxl">{title}</Headline>
+			</header>
+			<slot />
+		</div>
+	</div>
+</SectionWrapper>

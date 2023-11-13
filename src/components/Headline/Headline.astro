@@ -1,0 +1,25 @@
+---
+interface Props {
+	variant?: "small" | "medium" | "regular" | "large" | "xl" | "xxl" | "xxxl";
+	class?: string;
+}
+
+const { class: className, variant = "regular" } = Astro.props;
+---
+
+<h1
+	class:list={[
+		className,
+		{
+			"text-sm font-regular": variant === "small",
+			"text-md font-semibold": variant === "medium",
+			"text-base font-semibold": variant === "regular",
+			"text-lg font-semibold": variant === "large",
+			"text-lg lg:text-xl font-semibold": variant === "xl",
+			"text-xl lg:text-2xl font-semibold": variant === "xxl",
+			"text-4xl lg:text-6xl font-bold": variant === "xxxl",
+		},
+	]}
+>
+	<slot />
+</h1>
