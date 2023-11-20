@@ -1,0 +1,7 @@
+{
+  "jsxRuntime": "automatic",
+  "typescript": true,
+  "ignoreExisting": true,
+  "icon": true,
+  "svgo": false
+}

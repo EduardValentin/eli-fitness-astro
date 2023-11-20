@@ -1,6 +1,7 @@
 import Button, { type Props as ButtonProps } from "../Button/Button.tsx";
-import { useId, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import Modal from "../Modal/Modal.tsx";
+import Input from "../Input/Input.tsx";
 
 export const prerender = true;
 
@@ -57,35 +58,29 @@ const ServicesCard = (props: Props) => {
 					setModalOpen(false);
 				}}
 			>
-				<form class="flex flex-col gap-2">
-					<Input label="First Name" />
-					<Input label="Last Name" />
-					<Input label="Email" />
-				</form>
+				<div>
+					<h4 class="text-xl font-semibold text-center mb-3 text-black/80">
+						Great choice!
+					</h4>
+					<p class="text-[0.85rem]/[150%] text-center mb-6">
+						In order to apply for the <span class="font-bold">{title}</span>{" "}
+						plan, please fill in the information bellow and I'll reach out to
+						you as soon as possible
+					</p>
+					<form class="flex flex-col gap-2">
+						<Input fullWidth label="First Name" />
+						<Input fullWidth label="Last Name" />
+						<Input fullWidth label="Email" />
+						<Input fullWidth label="Additional Details" multiline />
+
+						<Button class="border-2 mt-5 border-black" color="white">
+							Apply
+						</Button>
+					</form>
+				</div>
 			</Modal>
 		</div>
 	);
 };
 
-interface InputProps {
-	type?: "text" | "email" | "password";
-	label?: string;
-	placeholder?: string;
-}
-const Input = ({ type = "text", label, placeholder }: InputProps) => {
-	const id = useId();
-	return (
-		<div>
-			<label htmlFor={id} class="block">
-				{label}
-			</label>
-			<input
-				id={id}
-				type={type}
-				placeholder={placeholder}
-				class="border-2 border-black"
-			/>
-		</div>
-	);
-};
 export default ServicesCard;

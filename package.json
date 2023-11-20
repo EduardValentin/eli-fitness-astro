@@ -1,29 +1,33 @@
 {
-  "name": "eli-fitness-astro",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/preact": "^3.0.1",
-    "@astrojs/tailwind": "^5.0.1",
-    "astro": "^3.2.3",
-    "clsx": "^2.0.0",
-    "tailwind-merge": "^1.14.0",
-    "tailwindcss": "^3.3.3"
-  },
-  "devDependencies": {
-    "@astrojs/renderer-preact": "^0.5.0",
-    "@types/react-modal": "^3.16.3",
-    "preact": "^10.18.2"
-  },
-  "overrides": {
-    "react": "npm:@preact/compat@latest",
-    "react-dom": "npm:@preact/compat@latest"
-  }
+	"name": "eli-fitness-astro",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"update-icons": "del-cli assets/icons/optimized src/components/preact/icons && npx svgo -f assets/icons -o assets/icons/optimized && npx @svgr/cli --no-dimensions -d src/components/preact/icons assets/icons/optimized"
+	},
+	"dependencies": {
+		"@astrojs/preact": "^3.0.1",
+		"@astrojs/tailwind": "^5.0.1",
+		"astro": "^3.2.3",
+		"clsx": "^2.0.0",
+		"tailwind-merge": "^1.14.0",
+		"tailwindcss": "^3.3.3"
+	},
+	"devDependencies": {
+		"@astrojs/renderer-preact": "^0.5.0",
+		"@svgr/cli": "^8.1.0",
+		"@types/react-modal": "^3.16.3",
+		"del-cli": "^5.1.0",
+		"preact": "^10.18.2",
+		"svgo": "^3.0.3"
+	},
+	"overrides": {
+		"react": "npm:@preact/compat@latest",
+		"react-dom": "npm:@preact/compat@latest"
+	}
 }
