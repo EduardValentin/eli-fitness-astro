@@ -8,6 +8,7 @@ export interface Props {
 	class?: string;
 	size?: "small" | "medium" | "large" | "xl";
 	color?: "white" | "black" | "pink";
+	type?: "button" | "submit" | "reset";
 }
 
 const Button = (props: Props) => {
@@ -18,6 +19,7 @@ const Button = (props: Props) => {
 		color = "white",
 		onClick,
 		children,
+		type,
 	} = props;
 	const classes = {
 		"block transition-all": true,
@@ -37,7 +39,7 @@ const Button = (props: Props) => {
 		);
 	}
 	return (
-		<button className={clsx(classes)} onClick={onClick}>
+		<button className={clsx(classes)} onClick={onClick} type={type}>
 			{children}
 		</button>
 	);

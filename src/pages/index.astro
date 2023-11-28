@@ -5,6 +5,7 @@ import Card from "../components/Card/Card.astro";
 import Section from "../components/Section/Section.astro";
 import ImageSection from "../components/Section/ImageSection.astro";
 import Button from "../components/preact/Button/Button.tsx";
+import FadeIn from "../components/preact/FadeIn/FadeIn.tsx";
 import ServicesCard from "../components/preact/ServicesCard/ServicesCard.tsx";
 import ContactItem from "../components/ContactItem/ContactItem.astro";
 ---
@@ -39,7 +40,9 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 			</div>
 		</div>
 	</div>
-	<main class="flex flex-col gap-20">
+	<main class="grid grid-cols-1 grid-rows-[repeat(4,1fr)_min-content] gap-20 overflow-x-hidden">
+		<FadeIn client:visible>
+
 		<ImageSection imgSrc="SedintaFotoEli-45.jpg" title="About me">
 			<main>
 				Hi, I'm Eli, a certified personal trainer and nutrition specialist with
@@ -55,6 +58,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 				control of your fitness, I'd love to work with you.
 			</main>
 		</ImageSection>
+		</FadeIn>
 
 		<Section
 			inverted
@@ -86,21 +90,23 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 				</Card>
 			</div>
 		</Section>
-		<ImageSection
-			imgSrc="eli-stretch.jpg"
-			imgClass="object-center"
-			flipped
-			title="Online Training"
-		>
-			<main>
-				Online training is a great way to get the benefits of a personal trainer
-				without having to leave your home. I offer a variety of online training
-				options, including one-on-one sessions, group sessions, and customized
-				workout plans. I also offer nutritional plans and meal plans to help you
-				achieve your fitness goals. If you're ready to take your fitness to the
-				next level, contact me today!
-			</main>
-		</ImageSection>
+		<FadeIn client:only>
+			<ImageSection
+				imgSrc="eli-stretch.jpg"
+				imgClass="object-center"
+				flipped
+				title="Online Training"
+			>
+				<main>
+					Online training is a great way to get the benefits of a personal trainer
+					without having to leave your home. I offer a variety of online training
+					options, including one-on-one sessions, group sessions, and customized
+					workout plans. I also offer nutritional plans and meal plans to help you
+					achieve your fitness goals. If you're ready to take your fitness to the
+					next level, contact me today!
+				</main>
+			</ImageSection>
+		</FadeIn>
 
 		<Section
 			inverted
@@ -111,7 +117,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 		>
 			<div class="absolute z-10 top-0 bottom-0 left-0 right-0 bg-black/60">
 			</div>
-			<div class="relative z-20 flex justify-center gap-5">
+			<div class="relative z-20 flex justify-center items-center flex-col sm:flex-row sm:items-stretch gap-5">
 				<ServicesCard
 					client:visible
 					price={75}
@@ -128,7 +134,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 				/>
 
 				<ServicesCard
-					client:visible
+				client:only
 					price={125}
 					title="Pro"
 					buttonText="Start now"
