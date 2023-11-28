@@ -37,7 +37,7 @@ const ServicesCard = (props: Props) => {
 	};
 
 	return (
-		<div class="bg-white relative flex flex-col gap-5 p-5 text-black w-96">
+		<div class="bg-white relative flex flex-col gap-5 p-5 text-black md:w-96 w-64">
 			<h2 class="mb-3 font-semibold text-xl text-center">{title}</h2>
 			<div class="text-center">
 				<span class="text-lg mr-2">€</span>

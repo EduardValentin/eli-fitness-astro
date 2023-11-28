@@ -16,6 +16,9 @@ module.exports = {
 				secondary: "#ffffff",
 				accent: "#ff0000",
 			},
+			fontFamily: {
+				"proxima-nova-bold": ["Proxima Nova Bold", "sans-serif"],
+			},
 			inset: {
 				left: "181px 0px 900px 202px #000000a6",
 			},
