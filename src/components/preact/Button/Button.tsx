@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import type { ComponentChildren } from "preact";
+import Spinner from "../Spinner/Spinner";
 
 export interface Props {
 	children?: ComponentChildren;
@@ -9,6 +10,7 @@ export interface Props {
 	size?: "small" | "medium" | "large" | "xl";
 	color?: "white" | "black" | "pink";
 	type?: "button" | "submit" | "reset";
+	loading?: boolean;
 }
 
 const Button = (props: Props) => {
@@ -20,6 +22,7 @@ const Button = (props: Props) => {
 		onClick,
 		children,
 		type,
+		loading,
 	} = props;
 	const classes = {
 		"block transition-all": true,
@@ -30,6 +33,10 @@ const Button = (props: Props) => {
 		"bg-black hover:bg-white hover:text-black text-white": color === "black",
 		"bg-purple-500 hover:bg-purple-700 text-white": color === "pink",
 	};
+
+	if (loading) {
+		<Spinner />;
+	}
 
 	if (href) {
 		return (

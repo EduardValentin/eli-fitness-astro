@@ -1,9 +1,10 @@
 import Button, { type Props as ButtonProps } from "../Button/Button.tsx";
-import { useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import Modal from "../Modal/Modal.tsx";
 import { Form, Formik } from "formik";
 import schema from "./schema.ts";
 import FormikInput from "../Input/FormikInput.tsx";
+import useSubmitApplication from "./useSubmitApplication.ts";
 
 export const prerender = true;
 
@@ -14,10 +15,18 @@ interface Props {
 	price: number;
 	important?: boolean;
 }
+
+interface FormValues {
+	firstName: string;
+	lastName: string;
+	email: string;
+	details: string;
+}
 const ServicesCard = (props: Props) => {
 	const { title, buttonText, items, price, important } = props;
 	const [modalOpen, setModalOpen] = useState(false);
-
+	const { isError, isSubmitted, isSubmitting, submitApplication } =
+		useSubmitApplication();
 	const buttonProps: ButtonProps = important
 		? {
 				color: "pink",
@@ -29,11 +38,8 @@ const ServicesCard = (props: Props) => {
 				class: "border-2 border-black mt-auto",
 		  };
 
-	const handleFormSubmit = (e: any) => {
-		alert("Submitted a todo");
-		console.log(e);
-
-		e.preventDefault();
+	const handleFormSubmit = (values: FormValues) => {
+		return submitApplication(values);
 	};
 
 	return (
@@ -81,7 +87,12 @@ const ServicesCard = (props: Props) => {
 					<Formik
 						validationSchema={schema}
 						onSubmit={handleFormSubmit}
-						initialValues={{}}
+						initialValues={{
+							details: "",
+							email: "",
+							firstName: "",
+							lastName: "",
+						}}
 						validateOnChange={false}
 						class="flex flex-col gap-2"
 					>
@@ -103,6 +114,7 @@ const ServicesCard = (props: Props) => {
 										class="border-2 w-full mt-5 border-black"
 										color="white"
 										type="submit"
+										loading={isSubmitting}
 									>
 										Apply
 									</Button>
