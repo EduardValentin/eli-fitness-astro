@@ -11,6 +11,7 @@
 		"update-icons": "del-cli assets/icons/optimized src/components/preact/icons && npx svgo -f assets/icons -o assets/icons/optimized && npx @svgr/cli --no-dimensions -d src/components/preact/icons assets/icons/optimized"
 	},
 	"dependencies": {
+		"@astrojs/netlify": "^3.1.1",
 		"@astrojs/preact": "^3.0.1",
 		"@astrojs/tailwind": "^5.0.1",
 		"astro": "^3.2.3",
