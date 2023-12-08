@@ -16,12 +16,11 @@ export default function useSubmitApplication() {
 			setIsError(false);
 
 			try {
-				await fetch(import.meta.env.PUBLIC_EMAIL_API_HOST, {
+				await fetch("/api/send-email", {
 					body: JSON.stringify(body),
 					headers: {
 						"Content-Type": "application/json",
 					},
-                    mode: 'no-cors', // 'cors' by default
 					method: "POST",
 				});
 				setIsSubmitted(true);

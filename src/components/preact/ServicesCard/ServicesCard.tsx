@@ -103,12 +103,14 @@ const ServicesCard = (props: Props) => {
 
 									<FormikInput name="lastName" fullWidth label="Last Name" />
 									<FormikInput name="email" fullWidth label="Email" />
+									<FormikInput name="gender" fullWidth label="Gender" />
+									<FormikInput name="goal" fullWidth label="Goal" />
 									<FormikInput
-										name="details"
+										name="fitnessExperience"
 										fullWidth
-										label="Additional Details"
-										multiline
+										label="Fitness Experience"
 									/>
+									<FormikInput name="age" type="number" fullWidth label="Age" />
 
 									<Button
 										class="border-2 w-full mt-5 border-black"

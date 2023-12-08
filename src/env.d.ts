@@ -1,5 +1,5 @@
 /// <reference types="astro/client" />
 
 interface ImportMetaEnv {
-	VITE_EMAIL_API_HOST: string;
+	EMAIL_API_HOST: string;
 }

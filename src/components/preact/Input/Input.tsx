@@ -4,7 +4,7 @@ import { Close } from "../icons";
 import type { HTMLAttributes } from "preact/compat";
 
 export interface InputProps extends HTMLAttributes<HTMLInputElement> {
-	type?: "text" | "email" | "password";
+	// type?: "text" | "email" | "password" ;
 	label?: string;
 	placeholder?: string;
 	fullWidth?: boolean;
