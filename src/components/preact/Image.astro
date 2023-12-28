@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+    interface Props extends HTMLAttributes<'img'> {
+        supportedWidths?: number[];
+    }
+
+const { 
+    src,
+    srcset,
+    supportedWidths = [560, 1120, 1490, 1780],
+  ...attrs
+} = Astro.props
+
+
+const buildSourceSet = (src: string) => supportedWidths.map((width) => {
+        return `${src}-${width}w.webp ${width}w`;
+    }).join(', ');
+---
+
+<img srcset={src ? buildSourceSet(src): srcset} {...attrs} />

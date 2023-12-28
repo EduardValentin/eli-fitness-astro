@@ -13,7 +13,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 <Layout title="Welcome to Astro.">
 	<div class="h-[100vh] bg-white">
 		<div
-			class="w-full bg-[url('/header-bg.webp')] bg-fixed bg-center lg:bg-left-top bg-cover absolute bottom-0 right-0 left-0 top-0 bg-no-repeat"
+			class="w-full bg-[url('header-bg-derivatives/header-bg-560w.webp')] lg:bg-[url('header-bg-derivatives/header-bg-1120w.webp')] xl:bg-[url('header-bg-derivatives/header-bg-1490w.webp')] fullhd:bg-[url('header-bg-derivatives/header-bg-1920w.webp')] 2xl:bg-[url('header-bg-derivatives/header-bg-1780w.webp')] 2k:bg-[url('header-bg-derivatives/header-bg-2560w.webp')] 4k:bg-[url('header-bg-derivatives/header-bg-3840w.webp')] bg-fixed bg-center lg:bg-left-top bg-cover absolute bottom-0 right-0 left-0 top-0 bg-no-repeat"
 		>
 		</div>
 		<div
@@ -43,7 +43,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 	<main class="grid grid-cols-1 md:grid-rows-[repeat(4,1fr)_min-content] grid-rows-[repeat(5,min-content)] overflow-x-hidden">
 		<FadeIn client:visible>
 
-		<ImageSection imgSrc="SedintaFotoEli-45.webp" title="About me">
+		<ImageSection imgSrc="SedintaFotoEli-45-derivatives/SedintaFotoEli-45" title="About me">
 			<main>
 				Hi, I'm Eli, a certified personal trainer and nutrition specialist with
 				a passion for helping women achieve their fitness goals. With my years
@@ -64,7 +64,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 			inverted
 			title="Why workout with me?"
 			headerClass="relative z-20"
-			class="relative bg-[url('/woman-training-bg.webp')] bg-cover bg-fixed bg-right-bottom"
+			class="relative bg-[url('woman-training-bg-derivatives/woman-training-bg-560w.webp')] bg-cover bg-fixed bg-right-bottom"
 		>
 			<div class="absolute z-10 top-0 bottom-0 left-0 right-0 bg-black/80">
 			</div>
@@ -92,7 +92,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 		</Section>
 		<FadeIn client:only>
 			<ImageSection
-				imgSrc="eli-stretch.webp"
+				imgSrc="eli-stretch-derivatives/eli-stretch"
 				imgClass="object-center"
 				flipped
 				title="Online Training"
@@ -113,7 +113,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 			id="plans"
 			title="Pick your training plan"
 			headerClass="relative z-20"
-			class="relative bg-[url('/training-bicep-dark.webp')] bg-cover bg-fixed bg-no-repeat bg-top lg:bg-left-top-bottom"
+			class="relative bg-[url('training-bicep-dark-derivatives/training-bicep-dark-560w.webp')] bg-cover bg-fixed bg-no-repeat bg-top lg:bg-left-top-bottom"
 		>
 			<div class="absolute z-10 top-0 bottom-0 left-0 right-0 bg-black/60">
 			</div>
@@ -134,7 +134,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 				/>
 
 				<ServicesCard
-				client:only
+					client:visible
 					price={125}
 					title="Pro"
 					buttonText="Start now"

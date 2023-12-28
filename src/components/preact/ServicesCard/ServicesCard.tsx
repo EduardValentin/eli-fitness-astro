@@ -1,12 +1,10 @@
 import Button, { type Props as ButtonProps } from "../Button/Button.tsx";
-import { useEffect, useState } from "preact/hooks";
+import { useState } from "preact/hooks";
 import Modal from "../Modal/Modal.tsx";
 import { Form, Formik } from "formik";
 import schema from "./schema.ts";
 import FormikInput from "../Input/FormikInput.tsx";
 import useSubmitApplication from "./useSubmitApplication.ts";
-
-export const prerender = true;
 
 interface Props {
 	title: string;

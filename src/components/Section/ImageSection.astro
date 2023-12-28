@@ -1,5 +1,6 @@
 ---
 import Headline from "../Headline/Headline.astro";
+import Image from "../preact/Image.astro";
 import SectionWrapper from "./SectionWrapper.astro";
 import type { Props as SectionWrapperProps } from "./SectionWrapper.astro";
 
@@ -20,6 +21,7 @@ const {
 	imgClass = "",
 	...props
 } = Astro.props;
+
 ---
 
 <SectionWrapper class={"flex gap-5 justify-center" + className} {...props}>
@@ -32,9 +34,11 @@ const {
 				},
 			]}
 		>
-			<img
+			<Image
 				src={imgSrc}
-				class={"block object-cover lg:w-[35rem] lg:h-[35rem] " + imgClass}
+				width={560}
+				height={560}
+				class={"block object-cover " + imgClass}
 				alt={imgAlt ?? `image for ${title}`}
 			/>
 		</div>

@@ -18,10 +18,6 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"> -->
-		
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
@@ -37,7 +33,7 @@ const { title } = Astro.props;
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
-			//@ts
+			//@ts-ignore
 			document.querySelector(this.getAttribute('href')).scrollIntoView({
 				behavior: 'smooth'
 			});
@@ -46,13 +42,6 @@ const { title } = Astro.props;
 </script>
 
 <style is:global>
-	/* @font-face {
-		font-family: 'Open Sans Pro';
-		src: url('/fonts/SourceSansPro-Regular.otf') format('opentype');
-		font-weight: normal;
-		font-style: normal;
-	} */
-
 	@font-face {
 		font-family: 'Proxima Nova Light';
 		src: url('/fonts/ProximaNova/ProximaNova-Light.eot');
@@ -63,6 +52,7 @@ const { title } = Astro.props;
 			url('/fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype');
 		font-weight: 300;
 		font-style: normal;
+		font-display: fallback;
 	}
 
 	@font-face {
@@ -75,6 +65,7 @@ const { title } = Astro.props;
 			url('/fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
 		font-weight: bold;
 		font-style: normal;
+		font-display: fallback;
 	}
 
 	@font-face {
@@ -87,19 +78,21 @@ const { title } = Astro.props;
 			url('/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
 		font-weight: normal;
 		font-style: italic;
+		font-display: fallback;
 	}
 
 	@font-face {
-    font-family: 'Proxima Nova Semibold';
-    src: url('/fonts/ProximaNova/ProximaNova-Semibold.eot');
-    src: local('Proxima Nova Semibold'), local('ProximaNova-Semibold'),
-        url('/fonts/ProximaNova/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/ProximaNova/ProximaNova-Semibold.woff2') format('woff2'),
-        url('/fonts/ProximaNova/ProximaNova-Semibold.woff') format('woff'),
-        url('/fonts/ProximaNova/ProximaNova-Semibold.ttf') format('truetype');
-    font-weight: 600;
-    font-style: normal;
-}
+		font-family: 'Proxima Nova Semibold';
+		src: url('/fonts/ProximaNova/ProximaNova-Semibold.eot');
+		src: local('Proxima Nova Semibold'), local('ProximaNova-Semibold'),
+			url('/fonts/ProximaNova/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+			url('/fonts/ProximaNova/ProximaNova-Semibold.woff2') format('woff2'),
+			url('/fonts/ProximaNova/ProximaNova-Semibold.woff') format('woff'),
+			url('/fonts/ProximaNova/ProximaNova-Semibold.ttf') format('truetype');
+		font-weight: 600;
+		font-style: normal;
+		font-display: fallback;
+	}
 
 	html {
 		font-family: 'Proxima Nova Light', sans-serif;
