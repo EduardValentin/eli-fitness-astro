@@ -31,7 +31,7 @@ const Button = (props: Props) => {
 		"px-5 py-2": size === "small",
 		"bg-white hover:bg-black hover:text-white text-black": color === "white",
 		"bg-black hover:bg-white hover:text-black text-white": color === "black",
-		"bg-purple-500 hover:bg-purple-700 text-white": color === "pink",
+		"bg-purple-800 hover:bg-purple-900 text-white": color === "pink",
 	};
 
 	if (loading) {
