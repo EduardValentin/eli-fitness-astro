@@ -28,6 +28,7 @@ const Input = ({
 	error,
 	onChange,
 	onClear,
+	required,
 	...rest
 }: InputProps) => {
 	const id = useId();
@@ -63,6 +64,7 @@ const Input = ({
 					})}
 				>
 					{label}
+					{required && " *"}
 				</label>
 				{multiline ? (
 					<textarea

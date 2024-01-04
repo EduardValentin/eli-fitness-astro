@@ -120,8 +120,8 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 			<div class="relative z-20 flex justify-center items-center flex-col sm:flex-row sm:items-stretch gap-5 px-5 md:px-0">
 				<ServicesCard
 					client:visible
-					price={75}
-					title="Standard"
+					price={100}
+					planType="standard"
 					buttonText="Start now"
 					items={[
 						"Personalized workout plan",
@@ -136,7 +136,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 				<ServicesCard
 					client:visible
 					price={125}
-					title="Pro"
+					planType="pro"
 					buttonText="Start now"
 					important
 					items={[
@@ -144,7 +144,7 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 						"Recommended calories intake based on your goal",
 						"Recommended macros based on your goal",
 						"Personalized meal plan with examples of meals per day",
-						"The possibility to meet and do a workout together once per week*",
+						"The possibility to meet and do a workout together once per week",
 					]}
 				/>
 			</div>

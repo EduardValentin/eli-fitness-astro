@@ -1,30 +1,26 @@
 import Button, { type Props as ButtonProps } from "../Button/Button.tsx";
 import { useState } from "preact/hooks";
 import Modal from "../Modal/Modal.tsx";
-import { Form, Formik } from "formik";
+import { Formik } from "formik";
+
 import schema from "./schema.ts";
-import FormikInput from "../Input/FormikInput.tsx";
 import useSubmitApplication from "./useSubmitApplication.ts";
+import ApplicationForm from "./ApplicationForm.tsx";
+
+type PlanType = "pro" | "standard";
 
 interface Props {
-	title: string;
+	planType: PlanType;
 	buttonText: string;
 	items: string[];
 	price: number;
 	important?: boolean;
 }
 
-interface FormValues {
-	firstName: string;
-	lastName: string;
-	email: string;
-	details: string;
-}
 const ServicesCard = (props: Props) => {
-	const { title, buttonText, items, price, important } = props;
+	const { planType: title, buttonText, items, price, important } = props;
 	const [modalOpen, setModalOpen] = useState(false);
-	const { isError, isSubmitted, isSubmitting, submitApplication } =
-		useSubmitApplication();
+
 	const buttonProps: ButtonProps = important
 		? {
 				color: "pink",
@@ -36,13 +32,77 @@ const ServicesCard = (props: Props) => {
 				class: "border-2 border-black mt-auto",
 		  };
 
-	const handleFormSubmit = (values: FormValues) => {
-		return submitApplication(values);
-	};
+	const { isError, isSubmitted, submitApplication } = useSubmitApplication();
 
+	const renderFormContent = () => {
+		if (isSubmitted) {
+			return (
+				<div class="flex flex-col items-center justify-center">
+					<h4 class="text-xl font-semibold text-center mb-5 text-black/80">
+						Thank you for applying!
+					</h4>
+					<p class="text-[0.85rem]/[150%] text-center mb-6">
+						You have successfully applied for the{" "}
+						<span class="font-bold font-proxima-nova-bold capitalize">
+							{title}
+						</span>{" "}
+						plan. I'll reach out to you as soon as possible to discuss the next
+						steps.
+					</p>
+				</div>
+			);
+		}
+		if (isError) {
+			return (
+				<div class="flex flex-col items-center justify-center">
+					<h4 class="text-xl font-semibold text-center mb-5 text-black/80">
+						Something went wrong
+					</h4>
+					<p class="text-[0.85rem]/[150%] text-center mb-6">
+						Please try again later
+					</p>
+				</div>
+			);
+		}
+
+		return (
+			<>
+				<h4 class="text-xl font-semibold text-center mb-5 text-black/80">
+					Great choice!
+				</h4>
+				<p class="text-[0.85rem]/[150%] text-center mb-6">
+					In order to apply for the{" "}
+					<span class="font-bold font-proxima-nova-bold capitalize">
+						{title}
+					</span>{" "}
+					plan, please fill in the information bellow and I'll reach out to you
+					as soon as possible
+				</p>
+				<Formik
+					validationSchema={schema}
+					onSubmit={submitApplication}
+					initialValues={{
+						gender: "",
+						fitnessExperience: "",
+						goal: "",
+						age: "",
+						details: "",
+						email: "",
+						firstName: "",
+						lastName: "",
+						plan: title,
+					}}
+					validateOnChange={false}
+					class="flex flex-col gap-2"
+				>
+					<ApplicationForm />
+				</Formik>
+			</>
+		);
+	};
 	return (
 		<div class="bg-white relative flex flex-col gap-5 p-5 text-black md:w-96 w-full">
-			<h2 class="mb-3 font-semibold text-xl text-center">{title}</h2>
+			<h2 class="mb-3 font-semibold text-xl text-center capitalize">{title}</h2>
 			<div class="text-center">
 				<span class="text-lg mr-2">€</span>
 				<span class="text-4xl font-semibold font-sans text-black/80">
@@ -73,56 +133,7 @@ const ServicesCard = (props: Props) => {
 					setModalOpen(false);
 				}}
 			>
-				<div class="p-10">
-					<h4 class="text-xl font-semibold text-center mb-5 text-black/80">
-						Great choice!
-					</h4>
-					<p class="text-[0.85rem]/[150%] text-center mb-6">
-						In order to apply for the <span class="font-bold">{title}</span>{" "}
-						plan, please fill in the information bellow and I'll reach out to
-						you as soon as possible
-					</p>
-					<Formik
-						validationSchema={schema}
-						onSubmit={handleFormSubmit}
-						initialValues={{
-							details: "",
-							email: "",
-							firstName: "",
-							lastName: "",
-						}}
-						validateOnChange={false}
-						class="flex flex-col gap-2"
-					>
-						{() => {
-							return (
-								<Form>
-									<FormikInput name="firstName" label="First Name" fullWidth />
-
-									<FormikInput name="lastName" fullWidth label="Last Name" />
-									<FormikInput name="email" fullWidth label="Email" />
-									<FormikInput name="gender" fullWidth label="Gender" />
-									<FormikInput name="goal" fullWidth label="Goal" />
-									<FormikInput
-										name="fitnessExperience"
-										fullWidth
-										label="Fitness Experience"
-									/>
-									<FormikInput name="age" type="number" fullWidth label="Age" />
-
-									<Button
-										class="border-2 w-full mt-5 border-black"
-										color="white"
-										type="submit"
-										loading={isSubmitting}
-									>
-										Apply
-									</Button>
-								</Form>
-							);
-						}}
-					</Formik>
-				</div>
+				<div class="p-10">{renderFormContent()}</div>
 			</Modal>
 		</div>
 	);

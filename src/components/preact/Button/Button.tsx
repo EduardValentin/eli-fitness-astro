@@ -25,7 +25,7 @@ const Button = (props: Props) => {
 		loading,
 	} = props;
 	const classes = {
-		"block transition-all": true,
+		"group block transition-all": true,
 		[className]: true,
 		"px-16 py-5 text-xl": size === "xl",
 		"px-5 py-2": size === "small",
@@ -33,10 +33,6 @@ const Button = (props: Props) => {
 		"bg-black hover:bg-white hover:text-black text-white": color === "black",
 		"bg-purple-800 hover:bg-purple-900 text-white": color === "pink",
 	};
-
-	if (loading) {
-		<Spinner />;
-	}
 
 	if (href) {
 		return (
@@ -46,8 +42,23 @@ const Button = (props: Props) => {
 		);
 	}
 	return (
-		<button className={clsx(classes)} onClick={onClick} type={type}>
-			{children}
+		<button
+			className={clsx(classes)}
+			onClick={onClick}
+			type={type}
+			disabled={loading}
+		>
+			{loading && (
+				<Spinner
+					className={clsx({
+						"[&>path:first-child]:fill-white":
+							color === "pink" || color === "black",
+						"[&>path:first-child]:fill-black group-hover:[&>path:first-child]:fill-white group-hover:[&>path:last-child]:fill-black":
+							color === "white",
+					})}
+				/>
+			)}
+			{!loading && children}
 		</button>
 	);
 };

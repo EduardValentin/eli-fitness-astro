@@ -1,6 +1,13 @@
 import { useCallback, useState } from "preact/hooks";
 
 interface RequestBody {
+	plan: string;
+	firstName: string;
+	lastName: string;
+	gender: string;
+	age: string;
+	fitnessExperience: string;
+	goal: string;
 	email: string;
 }
 
