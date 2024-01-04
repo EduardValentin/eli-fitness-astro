@@ -10,7 +10,7 @@ import ApplicationForm from "./ApplicationForm.tsx";
 type PlanType = "pro" | "standard";
 
 interface Props {
-	planType: PlanType;
+	planType?: PlanType;
 	buttonText: string;
 	items: string[];
 	price: number;
@@ -71,12 +71,8 @@ const ServicesCard = (props: Props) => {
 					Great choice!
 				</h4>
 				<p class="text-[0.85rem]/[150%] text-center mb-6">
-					In order to apply for the{" "}
-					<span class="font-bold font-proxima-nova-bold capitalize">
-						{title}
-					</span>{" "}
-					plan, please fill in the information bellow and I'll reach out to you
-					as soon as possible
+					In order to apply, please fill in the information bellow and I'll
+					reach out to you as soon as possible
 				</p>
 				<Formik
 					validationSchema={schema}
@@ -90,7 +86,7 @@ const ServicesCard = (props: Props) => {
 						email: "",
 						firstName: "",
 						lastName: "",
-						plan: title,
+						plan: title ?? "Standard",
 					}}
 					validateOnChange={false}
 					class="flex flex-col gap-2"
