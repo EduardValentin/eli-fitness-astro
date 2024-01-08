@@ -13,7 +13,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta
 			name="description"
-			content="Eli Fitness personal trainer for online workouts or in person gym workouts"
+			content="Transform your fitness journey with Eli, your dedicated personal trainer! Unlock the power of personalized workout plans tailored just for you. Enjoy detailed exercise explanations, convenient substitutes, goal-specific nutrition advice, and 24/7 support. Elevate your progress with weekly check-ins. Join us on the path to a healthier, stronger you!"
 		/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -107,4 +107,34 @@ const { title } = Astro.props;
 	body {
 		height: 100%;
 	}
+
+	.parallax {
+		@supports (-webkit-overflow-scrolling: touch) {
+			background-image: url(@bg-value);
+			background-attachment: scroll;
+		}
+	}
+
+	.bg-wrap {
+		clip: rect(0, auto, auto, 0);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg {
+		position: fixed;
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		background-position: center center;
+		transform: translateZ(0);
+		will-change: transform;
+	}
+
 </style>

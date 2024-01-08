@@ -104,6 +104,7 @@ const ServicesCard = (props: Props) => {
 				<span class="text-4xl font-semibold font-sans text-black/80">
 					{price}
 				</span>
+				<span>/month</span>
 			</div>
 
 			<ul>
