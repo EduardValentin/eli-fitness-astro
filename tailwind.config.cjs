@@ -7,8 +7,9 @@ module.exports = {
 		extend: {
 			screens: {
 				"full-hd": "1920px",
-				"4k": "3840px",
-				"2k": "2560px",
+				"landscape-mobile": {
+					raw: "(orientation: landscape) and (max-width: 639px)",
+				},
 			},
 			textShadow: {
 				sm: "0 1px 2px var(--tw-shadow-color)",
