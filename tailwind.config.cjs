@@ -7,6 +7,7 @@ module.exports = {
 		extend: {
 			screens: {
 				"full-hd": "1920px",
+				"2k": "2560px",
 				"landscape-mobile": {
 					raw: "(orientation: landscape) and (max-width: 639px)",
 				},
