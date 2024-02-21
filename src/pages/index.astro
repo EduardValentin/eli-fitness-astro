@@ -13,12 +13,16 @@ import ContactItem from "../components/ContactItem/ContactItem.astro";
 <Layout title="Eli Personal Trainer - Personalized workouts & nutritional plans">
 	<div class="h-[100vh] bg-white">
 		<div class="bg-wrap">
-
-			<div
-			class="w-full !top-[60px] bg-[url('/header-bg-derivatives/header-bg-9:16-640w.webp')] md:bg-[url('/header-bg-derivatives/header-bg-768w.webp')] lg:bg-[url('/header-bg-derivatives/header-bg-1024w.webp')] 2xl:bg-[url('/header-bg-derivatives/header-bg-1600w.webp')] full-hd:bg-[url('/header-bg-derivatives/header-bg-1920w.webp')] bg bg-center 2k:bg-top"
-			>
-			</div>
+		<picture >
+			<source media="(min-width: 1600px)" srcset="/header-bg-derivatives/header-bg-1920w.webp" type="image/webp">
+			<source media="(min-width: 1024px)" srcset="/header-bg-derivatives/header-bg-1600w.webp" type="image/webp">
+			<source media="(min-width: 768px)" srcset="/header-bg-derivatives/header-bg-1024w.webp" type="image/webp">
+			<source srcset="/header-bg-derivatives/header-bg-9:16-640w.webp" type="image/webp">
+			<!-- Fallback for browsers that do not support the picture tag -->
+			<img src="/header-bg-derivatives/header-bg-9:16-1920w.webp" class="object-cover bg 2k:object-top" alt="Eli header image">
+		  </picture>
 		</div>
+		  
 		<div
 			class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
 		>
