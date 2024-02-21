@@ -28,7 +28,9 @@
 		"autoprefixer": "^10.4.16",
 		"del-cli": "^5.1.0",
 		"preact": "^10.18.2",
-		"svgo": "^3.0.3"
+		"sharp": "^0.33.2",
+		"svgo": "^3.0.3",
+		"vite-plugin-image-optimizer": "^1.1.7"
 	},
 	"overrides": {
 		"react": "npm:@preact/compat@latest",
