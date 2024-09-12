@@ -17,7 +17,6 @@ export default function useEBookRequest() {
             setIsSubmitted(false);
             setIsError(false);
 
-            console.log(body);
             try {
                 const res = await fetch('/api/ebook-requests', {
                     body: JSON.stringify(body),
