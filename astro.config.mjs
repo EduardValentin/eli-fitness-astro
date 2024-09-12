@@ -1,16 +1,22 @@
-import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
-import preact from '@astrojs/preact'
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import preact from '@astrojs/preact';
 
-import netlify from '@astrojs/netlify/functions'
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
+import netlify from '@astrojs/netlify/functions';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
-import db from '@astrojs/db'
+import db from '@astrojs/db';
 
 // https://astro.build/config
 export default defineConfig({
     output: 'server',
-    integrations: [tailwind(), preact(), db()],
+    integrations: [
+        tailwind(),
+        preact({
+            include: ['**/preact/*'],
+        }),
+        db(),
+    ],
     renderers: ['@astrojs/renderer-preact'],
     adapter: netlify(),
     vite: {
@@ -20,4 +26,4 @@ export default defineConfig({
             }),
         ],
     },
-})
+});
