@@ -58,9 +58,8 @@ export const POST: APIRoute = async ({ request }) => {
     }
     return makeJSONResponse(lastInserted, 200);
 };
-
 async function sendEBookMail(email: string, name: string) {
-    const file = readFileSync('../../../assets/ggg.pdf', {
+    const file = readFileSync('/ggg.pdf', {
         encoding: 'base64',
     });
     return await sendEmail({
