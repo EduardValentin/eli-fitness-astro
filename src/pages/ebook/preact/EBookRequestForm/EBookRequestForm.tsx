@@ -74,14 +74,7 @@ function EBookRequestForm() {
                 }
 
                 return (
-                    <Form class="px-40 w-full">
-                        <div
-                            id="error-container"
-                            class="flex gap-5 hidden mx-auto text-red-700"
-                        >
-                            <SvgWarning width={20} class="fill-red-700" />
-                        </div>
-
+                    <Form class="px-10 md:px-10 lg:px-32 w-full">
                         <FormikInput
                             classes={{
                                 input: 'pt-7 pb-3 bg-[#dbd9d6] placeholder-gray-600',
