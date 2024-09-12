@@ -5,6 +5,7 @@ import { makeJSONResponse } from '../../utils/http';
 import { readFileSync } from 'fs';
 import { verifySolution } from 'altcha-lib';
 import schema from '../ebook/preact/EBookRequestForm/schema';
+import { resolve } from 'path';
 
 const validateBody = (body: Record<string, unknown>) => {
     if (!body.altcha) {
@@ -59,7 +60,7 @@ export const POST: APIRoute = async ({ request }) => {
     return makeJSONResponse(lastInserted, 200);
 };
 async function sendEBookMail(email: string, name: string) {
-    const file = readFileSync('../ggg.pdf', {
+    const file = readFileSync(resolve(__dirname, '../ggg.pdf'), {
         encoding: 'base64',
     });
     return await sendEmail({
