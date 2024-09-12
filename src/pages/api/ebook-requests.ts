@@ -60,7 +60,9 @@ export const POST: APIRoute = async ({ request }) => {
 };
 
 async function sendEBookMail(email: string, name: string) {
-    const file = readFileSync('ggg.pdf', { encoding: 'base64' });
+    const file = readFileSync('../../../assets/ggg.pdf', {
+        encoding: 'base64',
+    });
     return await sendEmail({
         templateID: EBOOK_EMAIL_TEMPLATE_ID,
         to: email,
