@@ -6,15 +6,19 @@ import NavItem from "./NavItem.astro";
 
 <header class="sticky top-0 bg-white/90 text-gray-700 z-30">
 	<nav class="flex justify-between px-3 sm:px-10 h-[60px] items-center text-md">
-		<div class="text-md font-semibold font-proxima-nova-bold text-gray-700">Eli Fitness</div>
+		<a href="/"><div class="text-md font-semibold font-proxima-nova-bold text-gray-700">Eli Fitness</div></a>
 		<ul class="flex items-center gap-6">
+			<NavItem>
+				<a href="/ebook/glute-growth">Free E-Book</a>
+			</NavItem>
 			<NavItem>
 				<a href="https://www.instagram.com/elilungu_/">Follow me</a>
 			</NavItem>
 			<NavItem>
-				<Button href="#plans" color="pink" size="small">Get Started</Button>
+				<Button href="/#plans" color="pink" size="small">Get Started</Button>
 			</NavItem>
 			<ViewTransitions />
 		</ul>
 	</nav>
 </header>
+

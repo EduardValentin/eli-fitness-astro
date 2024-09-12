@@ -1,159 +1,182 @@
 ---
-import Headline from "../components/Headline/Headline.astro";
-import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card/Card.astro";
-import Section from "../components/Section/Section.astro";
-import ImageSection from "../components/Section/ImageSection.astro";
-import Button from "../components/preact/Button/Button.tsx";
-import FadeIn from "../components/preact/FadeIn/FadeIn.tsx";
-import ServicesCard from "../components/preact/ServicesCard/ServicesCard.tsx";
-import ContactItem from "../components/ContactItem/ContactItem.astro";
+import Headline from '../components/Headline/Headline.astro';
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card/Card.astro';
+import Section from '../components/Section/Section.astro';
+import ImageSection from '../components/Section/ImageSection.astro';
+import Button from '../components/preact/Button/Button.tsx';
+import FadeIn from '../components/preact/FadeIn/FadeIn.tsx';
+import ServicesCard from '../components/preact/ServicesCard/ServicesCard.tsx';
+import ContactItem from '../components/ContactItem/ContactItem.astro';
 ---
 
+<script>
+	import 'altcha';
+</script>
+
 <Layout title="Eli Personal Trainer - Personalized workouts & nutritional plans">
-	<div class="h-[100vh] bg-white">
+	<div class="h-[calc(100vh-60px)] bg-white">
 		<div class="bg-wrap">
-		<picture >
-			<source media="(min-width:2560px)" srcset="/header-bg-derivatives/header-bg-2k.webp" type="image/webp" />
-			<source media="(min-width:1920px)" srcset="/header-bg-derivatives/header-bg-full-hd.webp" type="image/webp" />
-			<source media="(max-width:1024px)" srcset="/header-bg-derivatives/header-bg-1024w.webp" type="image/webp" />
-			<img src="/header-bg-derivatives/header-bg-full-hd.webp" class="object-cover bg object-[65%_10%]" alt="Eli header image">
-		  </picture>
+			<picture>
+				<source
+					media="(min-width:2560px)"
+					srcset="/header-bg-derivatives/header-bg-2k.webp"
+					type="image/webp"
+				/>
+				<source
+					media="(min-width:1920px)"
+					srcset="/header-bg-derivatives/header-bg-full-hd.webp"
+					type="image/webp"
+				/>
+				<source
+					media="(max-width:1024px)"
+					srcset="/header-bg-derivatives/header-bg-1024w.webp"
+					type="image/webp"
+				/>
+				<img
+					src="/header-bg-derivatives/header-bg-full-hd.webp"
+					class="object-cover bg object-[65%_10%]"
+					alt="Eli header image"
+				/>
+			</picture>
 		</div>
-		  
+
 		<div
 			class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"
 		>
 		</div>
-		<div
-			class="absolute w-full py-11 px-10 h-[calc(100%-60px)] flex flex-col text-white"
-		>
-			<div
-				class="lg:w-[50rem] w-full flex-1 flex justify-end flex-col text-center"
-			>
-				<Headline class="!text-white" variant="xxxl">
-					Get ready to reach your fitness goals
-				</Headline>
+		<div class="absolute w-full py-11 px-10 h-[calc(100%-60px)] flex flex-col text-white">
+			<div class="lg:w-[50rem] w-full flex-1 flex justify-end flex-col text-center">
+				<Headline class="!text-white" variant="biggest"> Get ready to reach your fitness goals </Headline>
 				<h1 class="text-2xl lg:text-4xl mt-5 font-semibold text-purple-200">
 					and feel confident in your own skin!
 				</h1>
 			</div>
 			<div class="lg:w-[50rem] w-full 2xl:flex-1 2xl:mt-0 mt-10 items-end flex">
-				<Button href="#plans" size="xl" class="mx-auto hover:scale-105">
-					Train with me
-				</Button>
+				<Button href="#plans" size="xl" class="mx-auto hover:scale-105"> Train with me </Button>
 			</div>
 		</div>
 	</div>
-	<main class="grid grid-cols-1 md:grid-rows-[repeat(4,1fr)_min-content] grid-rows-[repeat(5,min-content)] overflow-x-hidden">
+	<main
+		class="grid grid-cols-1 md:grid-rows-[repeat(4,1fr)_min-content] grid-rows-[repeat(5,min-content)] overflow-x-hidden"
+	>
 		<FadeIn client:visible>
 			<ImageSection imgSrc="SedintaFotoEli-45-derivatives/SedintaFotoEli-45" title="About me">
 				<main>
-					Hi, I'm Eli, a certified personal trainer and nutrition specialist with
-					a passion for helping women achieve their fitness goals. With my years
-					of experience in the industry, I have a deep understanding of the unique
-					challenges women face when it comes to their health and fitness. I have many years of fitness practice and more than two years as a personal trainer, with certification from FRCF (The Romanian Bodybuilding and Fitness Federation), which have equipped me with the knowledge and skills to
-					help my clients achieve their full potential. My mission is to provide
-					my clients with the support, guidance, and expertise they need to
-					achieve their fitness goals, and I am committed to helping them every
-					step of the way. If you're ready to transform your health and take
-					control of your fitness, I'd love to work with you.
+					<p class="mb-2">
+						Hi, I am Eli, a Fitness and Mindset Coach, with a passion for helping women achieve their
+						fitness goals through strength training, nutrition and mindset coaching.
+					</p>
+
+					<p class="mb-2">
+						With my years of experience in the industry and a certification from FRFC (The Romanian
+						Bodybuilding and Fitness Federation, I know how challenging, but at the same time how important
+						is for a women to train and eat according to their monthly hormonal fluctuation.
+					</p>
+
+					<p class="mb-2">
+						Because of that, my mission is to make fitness and health accessible to every women and to guide
+						them through a more balanced and healthier lifestyle, according to their individual goals and
+						needs.
+					</p>
+
+					<p>
+						If you are ready to improve your fitness, health and lifestyle, I would love to work with you.
+					</p>
 				</main>
 			</ImageSection>
-		</FadeIn>
 
-		<Section
-			inverted
-			title="Why workout with me?"
-			headerClass="relative z-20"
-			class="relative bg-[url('/woman-training-bg-derivatives/woman-training-bg-560w.webp')] 2k:bg-[url('/woman-training-bg-derivatives/woman-training-bg-1120w.webp')] bg-cover xl:bg-fixed bg-scroll bg-right-bottom"
-		>
-			<div class="absolute z-10 top-0 bottom-0 left-0 right-0 bg-black/80">
-			</div>
-			<div
-				class="relative z-20 flex lg:flex-row flex-col items-center lg:justify-center gap-5"
+			<Section
+				inverted
+				title="How I can help you"
+				paddings
+				headerClass="relative z-20"
+				class="relative xl:h-[700px] bg-[url('/woman-training-bg-derivatives/woman-training-bg-560w.webp')] 2k:bg-[url('/woman-training-bg-derivatives/woman-training-bg-1120w.webp')] bg-cover xl:bg-fixed bg-scroll bg-right-bottom"
 			>
-				<Card title="Personalized workouts">
-					My approach to personal training is centered around creating
-					personalized workout plans that are tailored to meet each client's
-					specific goals and needs.
-				</Card>
+				<div class="absolute z-10 top-0 bottom-0 left-0 right-0 bg-black/80"></div>
+				<div class="relative z-20 flex lg:flex-row flex-col items-center lg:justify-center gap-5">
+					<Card title="Personalized workouts">
+						I believe fitness isn’t a one-size-fits-all approach. For this reason, my approach to personal
+						training is centred around creating personalised workout plans that are tailored to meet each
+						client’s specific goals and needs.
+					</Card>
 
-				<Card title="Nutritional plans">
-					I offer personalized nutritional plans, tailored specifically to meet
-					the needs and goals of each individual client.
-				</Card>
+					<Card title="Nutritional plans">
+						Food should be your best ally, supporting your body and helping you become the best and
+						healthiest version of yourself. I believe in adopting healthier habits and making sustainable
+						nutrition choices that you can easily follow.
+					</Card>
 
-				<Card title="Full support">
-					I will be there for you every step of the way. From the initial
-					consultation, where we examine your specific needs and goals, to
-					ongoing communication to ensure you are progressing and staying on
-					track.
-				</Card>
-			</div>
-		</Section>
-		<FadeIn client:only>
-			<ImageSection
-				imgSrc="eli-stretch-derivatives/eli-stretch"
-				imgClass="object-center"
-				flipped
-				title="Online Training"
+					<Card title="Full support">
+						Having the right support and guidance is important for making your journey more enjoyable. For
+						this reason, I want to be that person for you and help you with the knowledge and guidance you
+						need to reach your goal.
+					</Card>
+				</div>
+			</Section>
+			<FadeIn client:only>
+				<ImageSection
+					imgSrc="eli-stretch-derivatives/eli-stretch"
+					imgClass="object-center"
+					flipped
+					title="Online Training"
+				>
+					<main>
+						I began my fitness journey by helping women reach their goals through in-person training.
+						However, I soon wondered how I could support more women in improving their health in a more
+						accessible way, and I realized that online training was the answer. With that in mind, my
+						primary focus is to help you build a strong body and a strong mind by offering my services
+						through online training. If this aligns with your goals, I’m here to offer my full support.
+					</main>
+				</ImageSection>
+			</FadeIn>
+
+			<Section
+				inverted
+				id="plans"
+				paddings
+				title="Apply for your training plan"
+				headerClass="relative z-20"
+				class="relative xl:h-[700px] bg-[url('/training-bicep-dark-derivatives/training-bicep-dark-560w.webp')] 2k:bg-[url('/training-bicep-dark-derivatives/training-bicep-dark-1120w.webp')] bg-cover xl:bg-fixed bg-scroll bg-no-repeat bg-top lg:bg-left-top-bottom"
 			>
-				<main>
-					Online training is a great way to get the benefits of a personal trainer
-					without having to leave your home. I offer a variety of online training
-					options, including one-on-one sessions, group sessions, and customized
-					workout plans. I also offer nutritional plans and meal plans to help you
-					achieve your fitness goals. If you're ready to take your fitness to the
-					next level, contact me today!
-				</main>
-			</ImageSection>
+				<div class="absolute z-10 top-0 bottom-0 left-0 right-0 bg-black/60"></div>
+				<div
+					class="relative z-20 flex justify-center items-center flex-col sm:flex-row sm:items-stretch gap-5 px-5 md:px-0"
+				>
+					<ServicesCard
+						client:visible
+						buttonText="Start now"
+						important
+						items={[
+							'Personalized workout plan based on your goal',
+							'Every exercise explained in detail',
+							'Substitutes for every exercise',
+							'Nutrition advice based on your goal',
+							'Support 24/7',
+							'Weekly check-ins',
+							'A live workout session per week',
+							'General advices on fitness and nutrition',
+						]}
+					/>
+				</div>
+			</Section>
+			<footer class="py-10 px-3 md:px-20 flex justify-center">
+				<div class="flex flex-col md:flex-row gap-20 md:justify-center items-start md:items-stretch">
+					<ContactItem type="email" label="Email" value="contact@elipersonaltrainer.com" />
+					<ContactItem label="Location" value="Romania, Bucharest" />
+					<ContactItem label="Follow">
+						<a href="https://www.instagram.com/elilungu_/">
+							<img
+								class="mx-auto mt-3 hover:scale-110 transition-all"
+								src="instagram.png"
+								alt="Instagram"
+								width={32}
+								height={32}
+							/>
+						</a>
+					</ContactItem>
+				</div>
+			</footer>
 		</FadeIn>
-
-		<Section
-			inverted
-			id="plans"
-			title="Apply for your training plan"
-			headerClass="relative z-20"
-			class="relative bg-[url('/training-bicep-dark-derivatives/training-bicep-dark-560w.webp')] 2k:bg-[url('/training-bicep-dark-derivatives/training-bicep-dark-1120w.webp')] bg-cover xl:bg-fixed bg-scroll bg-no-repeat bg-top lg:bg-left-top-bottom"
-		>
-			<div class="absolute z-10 top-0 bottom-0 left-0 right-0 bg-black/60">
-			</div>
-			<div class="relative z-20 flex justify-center items-center flex-col sm:flex-row sm:items-stretch gap-5 px-5 md:px-0">
-				<ServicesCard
-					client:visible
-					price={125}
-					buttonText="Start now"
-					important
-					items={[
-						"Personalized workout plan based on your goal",
-						"Every exercise explained in detail",
-						"Substitutes for every exercise",
-						"Nutrition advice based on your goal",
-						"Support 24/7",
-						"Weekly check-ins",
-						"A live workout session per week",
-						"General advices on fitness and nutrition"
-					]}
-				/>
-			</div>
-		</Section>
-		<footer class="py-10 px-3 md:px-20 flex justify-center">
-			<div class="flex flex-col md:flex-row gap-20 md:justify-center items-start md:items-stretch">
-				<ContactItem type="email" label="Email" value="eli.lungu04@gmail.com" />
-				<ContactItem label="Location" value="Romania, Bucharest" />
-				<ContactItem label="Follow">
-					<a href="https://www.instagram.com/elilungu_/">
-						<img
-							class="mx-auto mt-3 hover:scale-110 transition-all"
-							src="instagram.png"
-							alt="Instagram"
-							width={32}
-							height={32}
-						/>
-					</a>
-				</ContactItem>
-			</div>
-		</footer>
 	</main>
 </Layout>

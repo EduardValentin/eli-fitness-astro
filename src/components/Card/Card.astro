@@ -1,15 +1,14 @@
 ---
-import Headline from "../Headline/Headline.astro";
+import Headline from '../Headline/Headline.astro';
 interface Props {
 	class?: string;
 	title?: string;
 }
-const { title, class: className = "" } = Astro.props;
+const { title, class: className = '' } = Astro.props;
 ---
 
 <div
-	class={"p-10 relative md:w-96 w-full md:h-64 hover:text-pink-300 transition-colors text-center group " +
-		className}
+	class={'p-10 relative md:w-96 w-full md:h-72 hover:text-pink-300 transition-colors text-center group ' + className}
 >
 	<div
 		class="absolute w-4/5 top-0 left-1/2 -translate-x-1/2 group-hover:w-full group-hover:border-pink-300 transition-all right-0 bottom-0 border-white border-y"

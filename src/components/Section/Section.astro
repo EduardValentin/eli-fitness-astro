@@ -1,27 +1,19 @@
 ---
-import Headline from "../Headline/Headline.astro";
-import SectionWrapper from "./SectionWrapper.astro";
-import type { Props as SectionWrapperProps } from "./SectionWrapper.astro";
+import Headline from '../Headline/Headline.astro';
+import SectionWrapper from './SectionWrapper.astro';
+import type { Props as SectionWrapperProps } from './SectionWrapper.astro';
 
 interface Props extends SectionWrapperProps {
 	id?: string;
 	title: string;
 	headerClass?: string;
 }
-const {
-	title,
-	class: className = "",
-	headerClass = "",
-	...props
-} = Astro.props;
+const { title, class: className = '', headerClass = '', ...props } = Astro.props;
 ---
 
-<SectionWrapper
-	class={"flex flex-col gap-10 justify-center " + className}
-	{...props}
->
-	<header class={"text-center " + headerClass}>
-		<Headline variant="xxl">{title}</Headline>
+<SectionWrapper class={'flex flex-col gap-10 justify-center ' + className} {...props}>
+	<header class={'text-center ' + headerClass}>
+		<Headline variant="xxxl">{title}</Headline>
 	</header>
 	<slot />
 </SectionWrapper>

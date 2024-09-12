@@ -1,8 +1,8 @@
 ---
-import Headline from "../Headline/Headline.astro";
-import Image from "../preact/Image.astro";
-import SectionWrapper from "./SectionWrapper.astro";
-import type { Props as SectionWrapperProps } from "./SectionWrapper.astro";
+import Headline from '../Headline/Headline.astro';
+import Image from '../preact/Image.astro';
+import SectionWrapper from './SectionWrapper.astro';
+import type { Props as SectionWrapperProps } from './SectionWrapper.astro';
 
 interface Props extends SectionWrapperProps {
 	title: string;
@@ -12,40 +12,31 @@ interface Props extends SectionWrapperProps {
 	flipped?: boolean;
 }
 
-const {
-	title,
-	imgSrc,
-	imgAlt,
-	flipped,
-	class: className = "",
-	imgClass = "",
-	...props
-} = Astro.props;
-
+const { title, imgSrc, imgAlt, flipped, class: className = '', imgClass = '', ...props } = Astro.props;
 ---
 
-<SectionWrapper class={"flex gap-5 justify-center" + className} {...props}>
-	<div class="grid gap-5 lg:grid-cols-2 lg:grid-rows-1 grid-rows-[1fr_min-content] grid-cols-1">
+<SectionWrapper class={'flex gap-5 justify-between' + className} {...props}>
+	<div
+		class="2xl:py-40 2xl:px-20 xl:py-20 md:p-14 lg:py-14 p-5 grid gap-10 xl:gap-24 lg:grid-cols-2 lg:grid-rows-1 grid-rows-[1fr_min-content] grid-cols-1"
+	>
 		<div
 			class:list={[
-				"self-center place-self-center",
+				'self-center place-self-center',
 				{
-					"lg:order-1": flipped,
+					'lg:order-1': flipped,
 				},
 			]}
 		>
 			<Image
 				src={imgSrc}
-				width={560}
-				height={560}
 				supportedWidths={[560, 1120]}
-				class={"block object-cover " + imgClass}
+				class={'block object-cover ' + imgClass}
 				alt={imgAlt ?? `image for ${title}`}
 			/>
 		</div>
-		<div class="text-slate-600">
+		<div class:list={['text-slate-600 flex flex-col justify-center', {}]}>
 			<header class="mb-5">
-				<Headline variant="xxl">{title}</Headline>
+				<Headline variant="xxxl">{title}</Headline>
 			</header>
 			<slot />
 		</div>

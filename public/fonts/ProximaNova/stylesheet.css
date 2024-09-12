@@ -1,7 +1,9 @@
 @font-face {
     font-family: 'Proxima Nova Bl';
     src: url('ProximaNova-Black.eot');
-    src: local('Proxima Nova Black'), local('ProximaNova-Black'),
+    src:
+        local('Proxima Nova Black'),
+        local('ProximaNova-Black'),
         url('ProximaNova-Black.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-Black.woff2') format('woff2'),
         url('ProximaNova-Black.woff') format('woff'),
@@ -13,7 +15,9 @@
 @font-face {
     font-family: 'Proxima Nova Th';
     src: url('ProximaNova-Extrabld.eot');
-    src: local('Proxima Nova Extrabold'), local('ProximaNova-Extrabld'),
+    src:
+        local('Proxima Nova Extrabold'),
+        local('ProximaNova-Extrabld'),
         url('ProximaNova-Extrabld.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-Extrabld.woff2') format('woff2'),
         url('ProximaNova-Extrabld.woff') format('woff'),
@@ -25,7 +29,9 @@
 @font-face {
     font-family: 'Proxima Nova Lt';
     src: url('ProximaNova-SemiboldIt.eot');
-    src: local('Proxima Nova Semibold Italic'), local('ProximaNova-SemiboldIt'),
+    src:
+        local('Proxima Nova Semibold Italic'),
+        local('ProximaNova-SemiboldIt'),
         url('ProximaNova-SemiboldIt.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-SemiboldIt.woff2') format('woff2'),
         url('ProximaNova-SemiboldIt.woff') format('woff'),
@@ -37,7 +43,9 @@
 @font-face {
     font-family: 'Proxima Nova Th';
     src: url('ProximaNovaT-Thin.eot');
-    src: local('Proxima Nova Thin'), local('ProximaNovaT-Thin'),
+    src:
+        local('Proxima Nova Thin'),
+        local('ProximaNovaT-Thin'),
         url('ProximaNovaT-Thin.eot?#iefix') format('embedded-opentype'),
         url('ProximaNovaT-Thin.woff2') format('woff2'),
         url('ProximaNovaT-Thin.woff') format('woff'),
@@ -49,7 +57,9 @@
 @font-face {
     font-family: 'Proxima Nova Lt';
     src: url('ProximaNova-Light.eot');
-    src: local('Proxima Nova Light'), local('ProximaNova-Light'),
+    src:
+        local('Proxima Nova Light'),
+        local('ProximaNova-Light'),
         url('ProximaNova-Light.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-Light.woff2') format('woff2'),
         url('ProximaNova-Light.woff') format('woff'),
@@ -61,7 +71,9 @@
 @font-face {
     font-family: 'Proxima Nova Bl';
     src: url('ProximaNova-BlackIt.eot');
-    src: local('Proxima Nova Black Italic'), local('ProximaNova-BlackIt'),
+    src:
+        local('Proxima Nova Black Italic'),
+        local('ProximaNova-BlackIt'),
         url('ProximaNova-BlackIt.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-BlackIt.woff2') format('woff2'),
         url('ProximaNova-BlackIt.woff') format('woff'),
@@ -73,7 +85,9 @@
 @font-face {
     font-family: 'Proxima Nova Rg';
     src: url('ProximaNova-BoldIt.eot');
-    src: local('Proxima Nova Bold Italic'), local('ProximaNova-BoldIt'),
+    src:
+        local('Proxima Nova Bold Italic'),
+        local('ProximaNova-BoldIt'),
         url('ProximaNova-BoldIt.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-BoldIt.woff2') format('woff2'),
         url('ProximaNova-BoldIt.woff') format('woff'),
@@ -85,7 +99,9 @@
 @font-face {
     font-family: 'Proxima Nova Th';
     src: url('ProximaNova-ThinIt.eot');
-    src: local('Proxima Nova Thin Italic'), local('ProximaNova-ThinIt'),
+    src:
+        local('Proxima Nova Thin Italic'),
+        local('ProximaNova-ThinIt'),
         url('ProximaNova-ThinIt.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-ThinIt.woff2') format('woff2'),
         url('ProximaNova-ThinIt.woff') format('woff'),
@@ -97,7 +113,9 @@
 @font-face {
     font-family: 'Proxima Nova Rg';
     src: url('ProximaNova-Bold.eot');
-    src: local('Proxima Nova Bold'), local('ProximaNova-Bold'),
+    src:
+        local('Proxima Nova Bold'),
+        local('ProximaNova-Bold'),
         url('ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-Bold.woff2') format('woff2'),
         url('ProximaNova-Bold.woff') format('woff'),
@@ -109,7 +127,9 @@
 @font-face {
     font-family: 'Proxima Nova Rg';
     src: url('ProximaNova-RegularIt.eot');
-    src: local('Proxima Nova Regular Italic'), local('ProximaNova-RegularIt'),
+    src:
+        local('Proxima Nova Regular Italic'),
+        local('ProximaNova-RegularIt'),
         url('ProximaNova-RegularIt.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-RegularIt.woff2') format('woff2'),
         url('ProximaNova-RegularIt.woff') format('woff'),
@@ -121,7 +141,9 @@
 @font-face {
     font-family: 'Proxima Nova Th';
     src: url('ProximaNova-ExtrabldIt.eot');
-    src: local('Proxima Nova Extrabold Italic'), local('ProximaNova-ExtrabldIt'),
+    src:
+        local('Proxima Nova Extrabold Italic'),
+        local('ProximaNova-ExtrabldIt'),
         url('ProximaNova-ExtrabldIt.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-ExtrabldIt.woff2') format('woff2'),
         url('ProximaNova-ExtrabldIt.woff') format('woff'),
@@ -133,7 +155,9 @@
 @font-face {
     font-family: 'Proxima Nova Rg';
     src: url('ProximaNova-Regular.eot');
-    src: local('Proxima Nova Regular'), local('ProximaNova-Regular'),
+    src:
+        local('Proxima Nova Regular'),
+        local('ProximaNova-Regular'),
         url('ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-Regular.woff2') format('woff2'),
         url('ProximaNova-Regular.woff') format('woff'),
@@ -145,7 +169,9 @@
 @font-face {
     font-family: 'Proxima Nova Lt';
     src: url('ProximaNova-LightIt.eot');
-    src: local('Proxima Nova Light Italic'), local('ProximaNova-LightIt'),
+    src:
+        local('Proxima Nova Light Italic'),
+        local('ProximaNova-LightIt'),
         url('ProximaNova-LightIt.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-LightIt.woff2') format('woff2'),
         url('ProximaNova-LightIt.woff') format('woff'),
@@ -157,7 +183,9 @@
 @font-face {
     font-family: 'Proxima Nova Lt';
     src: url('ProximaNova-Semibold.eot');
-    src: local('Proxima Nova Semibold'), local('ProximaNova-Semibold'),
+    src:
+        local('Proxima Nova Semibold'),
+        local('ProximaNova-Semibold'),
         url('ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
         url('ProximaNova-Semibold.woff2') format('woff2'),
         url('ProximaNova-Semibold.woff') format('woff'),
@@ -165,4 +193,3 @@
     font-weight: 600;
     font-style: normal;
 }
-

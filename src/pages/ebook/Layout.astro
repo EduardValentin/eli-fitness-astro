@@ -1,0 +1,18 @@
+---
+import RootLayout, { type Props as RootProps } from '../../layouts/Layout.astro';
+
+interface Props extends RootProps {}
+---
+
+<RootLayout {...Astro.props}>
+	<div class="flex flex-row h-[calc(100vh-60px)] overflow-hidden">
+		<div class="flex-1 overflow-hidden relative">
+			<img
+				src="../EbookDownloadBG.webp"
+				class="object-cover absolute -right-32 object-[0%_30%] block top-0 max-w-[1000px] w-[1000px] h-full"
+				alt="Eli eBook download background image"
+			/>
+		</div>
+		<slot />
+	</div>
+</RootLayout>

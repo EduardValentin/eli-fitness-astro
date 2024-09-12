@@ -1,9 +1,16 @@
-import { object, string } from "yup";
+import { number, object, string } from 'yup';
 
 export default object({
-	firstName: string().required("First name is required"),
-	lastName: string().required("Last name is required"),
-	email: string()
-		.email("Email format is not valid")
-		.required("Email is required"),
+    firstName: string()
+        .matches(/^[a-zA-Z]*$/, { message: 'Only letters are allowed' })
+        .trim()
+        .required('First name is required'),
+    lastName: string()
+        .matches(/^[a-zA-Z]*$/, { message: 'Only letters are allowed' })
+        .trim()
+        .required('Last name is required'),
+    age: number().nullable().min(1, 'Age must be greater than 1'),
+    email: string()
+        .email('Email format is not valid')
+        .required('Email is required'),
 });
