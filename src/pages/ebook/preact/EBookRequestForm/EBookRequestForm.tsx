@@ -1,5 +1,4 @@
 import { Form, Formik } from 'formik';
-import SvgWarning from '../../../../components/preact/icons/Warning';
 import FormikInput from '../../../../components/preact/Input/FormikInput';
 import Altcha from '../../../../components/preact/Altcha/Altcha';
 import { useEffect, useRef } from 'preact/hooks';

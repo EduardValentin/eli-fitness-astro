@@ -19,7 +19,7 @@ export default function useEBookRequest() {
 
             console.log(body);
             try {
-                await fetch('/api/ebook-requests', {
+                const res = await fetch('/api/ebook-requests', {
                     body: JSON.stringify(body),
                     headers: {
                         'Content-Type': 'application/json',
@@ -27,6 +27,9 @@ export default function useEBookRequest() {
                     method: 'POST',
                 });
                 setIsSubmitted(true);
+                if (res.status < 200 || res.status >= 300) {
+                    setIsError(true);
+                }
             } catch (e) {
                 setIsError(true);
             } finally {

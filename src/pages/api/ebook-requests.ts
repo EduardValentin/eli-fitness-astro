@@ -53,14 +53,14 @@ export const POST: APIRoute = async ({ request }) => {
             );
         }
     } catch (e) {
-        rollback(lastInserted?.id);
+        rollback(e, lastInserted?.id);
         return emailSendingError();
     }
     return makeJSONResponse(lastInserted, 200);
 };
 
 async function sendEBookMail(email: string, name: string) {
-    const file = readFileSync('assets/ggg.pdf', { encoding: 'base64' });
+    const file = readFileSync('/assets/ggg.pdf', { encoding: 'base64' });
     return await sendEmail({
         templateID: EBOOK_EMAIL_TEMPLATE_ID,
         to: email,
