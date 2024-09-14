@@ -6,6 +6,7 @@ import netlify from '@astrojs/netlify/functions';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 import db from '@astrojs/db';
+import myPlugin from './base64Loader';
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,6 +25,7 @@ export default defineConfig({
             ViteImageOptimizer({
                 /* pass your config */
             }),
+            myPlugin(),
         ],
     },
 });

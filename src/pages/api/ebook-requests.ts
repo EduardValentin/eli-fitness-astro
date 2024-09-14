@@ -2,10 +2,10 @@ import type { APIRoute } from 'astro';
 import { sendEmail } from '../../services/email-service';
 import * as eBookRequestsRepository from '../../repositories/ebook-request-repository';
 import { makeJSONResponse } from '../../utils/http';
-import { readFileSync } from 'fs';
 import { verifySolution } from 'altcha-lib';
 import schema from '../ebook/preact/EBookRequestForm/schema';
-import { resolve } from 'path';
+// @ts-ignore
+import pdfString from '../../../assets/ggg.pdf?base64';
 
 const validateBody = (body: Record<string, unknown>) => {
     if (!body.altcha) {
@@ -39,6 +39,12 @@ export const POST: APIRoute = async ({ request }) => {
             lastInserted = dbInsert[0];
 
             const res = await sendEBookMail(email, name);
+            console.log(
+                'Received email provider response. ',
+                res.response.status,
+                ' Body: ',
+                res.response.data
+            );
             if (res.response.status < 200 || res.response.status >= 300) {
                 console.info('[ERROR]: Email sending failed', res);
                 return emailSendingError();
@@ -60,9 +66,6 @@ export const POST: APIRoute = async ({ request }) => {
     return makeJSONResponse(lastInserted, 200);
 };
 async function sendEBookMail(email: string, name: string) {
-    const file = readFileSync('ggg.pdf', {
-        encoding: 'base64',
-    });
     return await sendEmail({
         templateID: EBOOK_EMAIL_TEMPLATE_ID,
         to: email,
@@ -75,7 +78,7 @@ async function sendEBookMail(email: string, name: string) {
             {
                 Filename: 'glute-growth-guide.pdf',
                 ContentType: 'application/pdf',
-                Base64Content: file,
+                Base64Content: pdfString,
             },
         ],
     });

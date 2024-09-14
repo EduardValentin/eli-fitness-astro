@@ -4,4 +4,4 @@
     Access-Control-Allow-Origin = "elipersonaltrainer.com"
 
 [functions]
-  included_files = ["public/**"]
+  included_files = ["ggg.pdf"]
