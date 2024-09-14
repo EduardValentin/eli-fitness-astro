@@ -1,31 +1,21 @@
-import { readFileSync } from 'fs';
+import fs from 'fs';
+import type { Plugin } from 'vite';
 
-const fileRegex = /\.(pdf)$/;
-
-export default function myPlugin() {
+export const base64 = async (): Promise<Plugin> => {
     return {
-        name: 'transform-file',
+        name: 'vite-plugin-base64',
+        enforce: 'pre' as const,
+        load: async (id: string) => {
+            const [path, query] = id.split('?');
 
-        transform(src: string, id: string) {
-            if (fileRegex.test(id)) {
-                return {
-                    code: toBase64Pdf(id, src),
-                    map: null, // provide source map if available
-                };
-            }
+            if (query != 'base64' || !path) return null;
+
+            const data = fs.readFileSync(path);
+            const base64 = data.toString('base64');
+
+            return `export default '${base64}';`;
         },
     };
-}
+};
 
-function toBase64Pdf(id: string, src: string) {
-    const [path, query] = id.split('?');
-    if (!path) {
-        return;
-    }
-    if (query != 'base64') return null;
-
-    const data = readFileSync(path);
-    const base64 = data.toString('base64');
-
-    return `export default '${base64}';`;
-}
+export default base64;
