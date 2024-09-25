@@ -11,8 +11,8 @@ export const GenericError = () => {
             </div>
             <p class="text-[0.85rem]/[150%] text-center mb-6 text-red-600">
                 Please try again later or contact us at{' '}
-                <a href="mailto:contact@elipersonaltrainer.com">
-                    contact@elipersonaltrainer.com
+                <a href="mailto:eli.lungu04@gmail.com">
+                    eli.lungu04@gmail.com
                 </a>
             </p>
         </div>
