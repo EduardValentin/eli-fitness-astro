@@ -6,7 +6,18 @@ import netlify from '@astrojs/netlify/functions';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 import db from '@astrojs/db';
-import base64 from './base64Loader';
+import base64Loader from './base64Loader';
+
+import node from '@astrojs/node';
+import { visualizer } from 'rollup-plugin-visualizer';
+
+let adapter;
+
+if (process.argv[3] === '--node' || process.argv[4] === '--node') {
+    adapter = node({ mode: 'standalone' });
+} else {
+    adapter = netlify();
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,13 +30,20 @@ export default defineConfig({
         db(),
     ],
     renderers: ['@astrojs/renderer-preact'],
-    adapter: netlify(),
+    adapter: adapter,
     vite: {
+        build: {
+            rollupOptions: {
+                treeshake: 'smallest',
+            },
+        },
         plugins: [
             ViteImageOptimizer({
                 /* pass your config */
             }),
-            base64(),
+            base64Loader(),
+            visualizer(),
         ],
     },
 });
+

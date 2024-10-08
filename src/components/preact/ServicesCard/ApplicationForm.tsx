@@ -6,6 +6,7 @@ import Altcha from '../Altcha/Altcha.tsx';
 import schema from './schema.ts';
 import type { SubmitApplicationBody } from './useSubmitApplication.ts';
 import { PrivacyConsent } from '../PrivacyConsent/PrivacyConsent.tsx';
+import FormikSelect from '../Select/FormikSelect.tsx';
 
 interface ApplicationFormProps {
     title?: string;
@@ -22,6 +23,7 @@ const ApplicationForm = (props: ApplicationFormProps) => {
                 if (!altchaRef.current?.value) {
                     return;
                 }
+                console.log(values)
                 onSubmit({ ...values, altcha: altchaRef.current?.value });
             }}
             initialValues={{
@@ -55,18 +57,69 @@ const ApplicationForm = (props: ApplicationFormProps) => {
                             fullWidth
                             label="Email"
                         />
-                        <FormikInput name="gender" fullWidth label="Gender" />
-                        <FormikInput name="goal" fullWidth label="Goal" />
-                        <FormikInput
-                            name="fitnessExperience"
-                            fullWidth
-                            label="Fitness Experience"
-                        />
+
                         <FormikInput
                             name="age"
                             type="number"
                             fullWidth
                             label="Age"
+                        />
+
+                        <FormikSelect
+                            options={[
+                                {
+                                    value: 'weight-loss',
+                                    label: 'Weight loss'
+                                }, {
+                                    value: 'maintenance',
+                                    label: 'Maintenance',
+                                },
+                                {
+                                    value: 'build-muscle',
+                                    label: 'Build muscle',
+                                }
+                            ]}
+                            name="goal"
+                            label="Goal"
+                        />
+                        <FormikSelect
+                            name="fitnessExperience"
+                            label="Fitness Experience"
+                            options={[
+                                {
+                                    value: 'none',
+                                    label: 'None'
+                                }, {
+                                    value: 'beginner',
+                                    label: 'Beginner (0 - 1 years)'
+                                }, {
+
+                                    value: 'intermediate',
+                                    label: 'Intermediate (1 - 3 years)',
+                                }, {
+
+                                    value: 'advanced',
+                                    label: 'Advanced (More than 3 years)'
+                                }
+
+                            ]}
+                        />
+                        <FormikSelect
+                            label='Gender'
+                            name='gender'
+                            options={[
+                                {
+                                    value: 'male',
+                                    label: 'Male',
+
+                                }, {
+                                    value: 'female',
+                                    label: 'Female'
+                                }, {
+                                    value: 'unknown',
+                                    label: 'Prefer not to say'
+                                }
+                            ]}
                         />
 
                         <Altcha ref={altchaRef} />
