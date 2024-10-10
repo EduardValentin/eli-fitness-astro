@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { useId, useRef, useState } from 'preact/hooks'
-import { Close } from '../icons'
 import type { HTMLAttributes } from 'preact/compat'
+import { XMarkIcon } from '@heroicons/react/20/solid'
 
 export interface InputProps extends HTMLAttributes<HTMLInputElement> {
     label?: string
@@ -42,7 +42,7 @@ const Input = ({
     const ref = useRef<any>(null)
 
     const inputClasses = clsx(
-        'border-b outline-none flex-1 peer text-[0.85rem]/[150%] pr-5',
+        'border-b outline-none flex-1 py-1.5 peer text-[0.85rem]/[150%] pr-5',
         {
             'border-red-600/40 focus:border-red-600 hover:border-red-600':
                 error,
@@ -65,11 +65,11 @@ const Input = ({
                     <label
                         htmlFor={id}
                         class={clsx(
-                            'mr-5 -mb-0.5 text-[0.85rem]/[150%] font-semibold',
+                            'mr-5 text-[0.85rem]/[100%] font-semibold',
                             {
-                                'text-red-600 group-hover:text-red-600/60 group-focus-within:text-red-600/60 ':
+                                'text-red-600/60 group-hover:text-red-600 group-focus-within:text-red-600 ':
                                     error,
-                                'text-black group-hover:text-black/60 group-focus-within:text-black/60 ':
+                                'text-black/60 group-hover:text-black group-focus-within:text-black ':
                                     !error,
                             },
                             classes.label
@@ -115,7 +115,7 @@ const Input = ({
                 {clearable && hasValue && (
                     <button
                         type="button"
-                        class="ml-2 absolute right-0 bottom-1/2 translate-y-1/2"
+                        class="ml-3 absolute right-0 bottom-1/2 translate-y-1/2"
                         onClick={() => {
                             if (!ref.current) return
                             setHasValue(false)
@@ -123,7 +123,7 @@ const Input = ({
                             onClear?.()
                         }}
                     >
-                        <Close width={16} />
+                        <XMarkIcon className='h-5 w-5 fill-black/60' />
                     </button>
                 )}
             </div>
