@@ -50,7 +50,7 @@ const Modal = (props: ModalProps) => {
         >
             <div
                 class={clsx(
-                    'p-5 bg-white relative transition-all duration-200 ease-in-out opacity-0 -translate-y-[100vh]',
+                    'p-10 bg-white relative transition-all duration-200 ease-in-out opacity-0 -translate-y-[100vh]',
                     {
                         'transform-none opacity-100': isVisible,
                     }
