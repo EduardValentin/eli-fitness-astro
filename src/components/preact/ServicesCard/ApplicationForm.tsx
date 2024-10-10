@@ -119,6 +119,8 @@ const ApplicationForm = (props: ApplicationFormProps) => {
                             ]}
                         />
 
+                        <FormikInput label='Message' name="message" multiline fullWidth />
+
                         <Altcha ref={altchaRef} />
                         <PrivacyConsent />
                         <Button
