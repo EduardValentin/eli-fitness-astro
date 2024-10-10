@@ -5,8 +5,10 @@
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
-        "build": "astro build --node --remote",
-        "preview": "astro preview --node",
+        "build:node": "astro build --node --remote",
+        "build": "astro build --remote",
+        "preview:node": "astro preview --node",
+        "preview": "astro preview",
         "astro": "astro",
         "format": "npx prettier . --write",
         "update-icons": "del-cli assets/icons/optimized src/components/preact/icons && npx svgo -f assets/icons -o assets/icons/optimized && npx @svgr/cli --no-dimensions -d src/components/preact/icons assets/icons/optimized"
