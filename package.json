@@ -5,17 +5,23 @@
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
+        "build:node": "astro build --node --remote",
         "build": "astro build --remote",
+        "preview:node": "astro preview --node",
         "preview": "astro preview",
         "astro": "astro",
         "format": "npx prettier . --write",
         "update-icons": "del-cli assets/icons/optimized src/components/preact/icons && npx svgo -f assets/icons -o assets/icons/optimized && npx @svgr/cli --no-dimensions -d src/components/preact/icons assets/icons/optimized"
     },
     "dependencies": {
-        "@astrojs/db": "^0.14.0",
+        "@astrojs/db": "^0.14.2",
         "@astrojs/netlify": "^5.5.1",
+        "@astrojs/node": "^8.3.4",
         "@astrojs/preact": "^3.5.3",
         "@astrojs/tailwind": "^5.1.0",
+        "@astrojs/web-vitals": "^3.0.0",
+        "@headlessui/react": "^2.1.9",
+        "@heroicons/react": "^2.1.5",
         "altcha": "^1.0.0",
         "altcha-lib": "^1.0.0",
         "astro": "^4.15.2",
@@ -36,6 +42,7 @@
         "del-cli": "^5.1.0",
         "preact": "^10.23.2",
         "prettier": "3.3.3",
+        "rollup-plugin-visualizer": "^5.12.0",
         "sharp": "^0.33.2",
         "svgo": "^3.0.3",
         "vite-plugin-image-optimizer": "^1.1.7"

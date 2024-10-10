@@ -22,13 +22,13 @@ const ServicesCard = (props: Props) => {
 
     const buttonProps: ButtonProps = important
         ? {
-              color: 'pink',
-              class: 'border-pink mt-auto from-purple-300 bg-gradient-to-r to-purple-700 hover:from-purple-400 hover:to-purple-800',
-          }
+            color: 'pink',
+            class: 'border-pink mt-auto from-purple-300 bg-gradient-to-r to-purple-700 hover:from-purple-400 hover:to-purple-800',
+        }
         : {
-              color: 'white',
-              class: 'border-2 border-black mt-auto',
-          };
+            color: 'white',
+            class: 'border-2 border-black mt-auto',
+        };
 
     const { isError, isSubmitted, submitApplication, reset } =
         useSubmitApplication();
@@ -110,7 +110,7 @@ const ServicesCard = (props: Props) => {
                     reset();
                 }}
             >
-                <div class="p-10">{renderFormContent()}</div>
+                <div>{renderFormContent()}</div>
             </Modal>
         </div>
     );
