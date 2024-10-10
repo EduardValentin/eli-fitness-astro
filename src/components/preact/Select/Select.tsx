@@ -29,7 +29,7 @@ export default function Select({ options, onSelect, label }: SelectProps) {
 				'text-black/60': !selected
 			})}
 		>
-			<Label>{label}</Label>
+			<Label className="text-[0.85rem]/[100%]">{label}</Label>
 			<Listbox value={selected} onChange={onSelectInternal}>
 				<div className="relative mt-2 flex-1">
 					<ListboxButton className="relative w-full cursor-default bg-white py-1.5 text-left text-black border-black/60 border-b focus:outline-none focus:border-black">
@@ -42,7 +42,7 @@ export default function Select({ options, onSelect, label }: SelectProps) {
 							:
 							<>
 								<span className="flex items-center">
-									<span className="ml-3 block truncate">{selected?.label ?? ''}</span>
+									<span className="block truncate">{selected?.label ?? ''}</span>
 								</span>
 								<span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center">
 									<ChevronUpDownIcon aria-hidden="true" className="h-5 w-5 text-black/60" />

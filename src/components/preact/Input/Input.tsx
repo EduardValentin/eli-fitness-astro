@@ -65,7 +65,7 @@ const Input = ({
                     <label
                         htmlFor={id}
                         class={clsx(
-                            'mr-5 -mb-0.5 text-[0.85rem]/[150%] font-semibold',
+                            'mr-5 text-[0.85rem]/[100%] font-semibold',
                             {
                                 'text-red-600/60 group-hover:text-red-600 group-focus-within:text-red-600 ':
                                     error,

@@ -7,9 +7,8 @@ export interface FormikSelectProps extends SelectProps {
 }
 
 export default function FormikSelect({ name, ...props }: FormikSelectProps): ReactElement {
-	const [{ value, onChange }, { }, { }] = useField(name);
+	const [{ onChange }] = useField(name);
 
-	console.log(value);
 	return <Select
 		{...props}
 		onSelect={sel => {

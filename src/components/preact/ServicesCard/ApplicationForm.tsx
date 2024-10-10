@@ -71,8 +71,8 @@ const ApplicationForm = (props: ApplicationFormProps) => {
                                     value: 'weight-loss',
                                     label: 'Weight loss'
                                 }, {
-                                    value: 'maintenance',
-                                    label: 'Maintenance',
+                                    value: 'improve-lifestyle',
+                                    label: 'Improve lifestyle',
                                 },
                                 {
                                     value: 'build-muscle',
@@ -83,13 +83,10 @@ const ApplicationForm = (props: ApplicationFormProps) => {
                             label="Goal"
                         />
                         <FormikSelect
-                            name="fitnessExperience"
+                            name="experience"
                             label="Fitness Experience"
                             options={[
                                 {
-                                    value: 'none',
-                                    label: 'None'
-                                }, {
                                     value: 'beginner',
                                     label: 'Beginner (0 - 1 years)'
                                 }, {

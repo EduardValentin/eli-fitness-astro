@@ -11,6 +11,8 @@ import base64Loader from './base64Loader';
 import node from '@astrojs/node';
 import { visualizer } from 'rollup-plugin-visualizer';
 
+import webVitals from '@astrojs/web-vitals';
+
 let adapter;
 
 if (process.argv[3] === '--node' || process.argv[4] === '--node') {
@@ -22,13 +24,9 @@ if (process.argv[3] === '--node' || process.argv[4] === '--node') {
 // https://astro.build/config
 export default defineConfig({
     output: 'server',
-    integrations: [
-        tailwind(),
-        preact({
-            include: ['**/preact/*'],
-        }),
-        db(),
-    ],
+    integrations: [tailwind(), preact({
+        include: ['**/preact/*'],
+    }), db(), webVitals()],
     renderers: ['@astrojs/renderer-preact'],
     adapter: adapter,
     vite: {
@@ -46,4 +44,3 @@ export default defineConfig({
         ],
     },
 });
-
