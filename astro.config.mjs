@@ -24,15 +24,20 @@ if (process.argv[3] === '--node' || process.argv[4] === '--node') {
 // https://astro.build/config
 export default defineConfig({
     output: 'server',
-    integrations: [tailwind(), preact({
-        include: ['**/preact/*'],
-    }), db(), webVitals()],
+    integrations: [
+        tailwind(),
+        preact({
+            include: ['**/preact/*'],
+        }),
+        db(),
+        webVitals(),
+    ],
     renderers: ['@astrojs/renderer-preact'],
     adapter: adapter,
     vite: {
         build: {
             rollupOptions: {
-                treeshake: 'smallest',
+                treeshake: 'recommended',
             },
         },
         plugins: [
@@ -44,3 +49,4 @@ export default defineConfig({
         ],
     },
 });
+

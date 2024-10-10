@@ -36,6 +36,8 @@ const Altcha = forwardRef<{ value: string | null }, AltchaProps>(
                         handleStateChange
                     );
             }
+
+            return () => { };
         }, [onStateChange]);
 
         const altcha = (

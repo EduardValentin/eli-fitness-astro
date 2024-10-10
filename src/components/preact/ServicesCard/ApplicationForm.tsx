@@ -23,7 +23,6 @@ const ApplicationForm = (props: ApplicationFormProps) => {
                 if (!altchaRef.current?.value) {
                     return;
                 }
-                console.log(values)
                 onSubmit({ ...values, altcha: altchaRef.current?.value });
             }}
             initialValues={{
@@ -122,6 +121,7 @@ const ApplicationForm = (props: ApplicationFormProps) => {
                         <FormikInput label='Message' name="message" multiline fullWidth />
 
                         <Altcha ref={altchaRef} />
+
                         <PrivacyConsent />
                         <Button
                             class="border-2 w-full mt-5 border-black"
