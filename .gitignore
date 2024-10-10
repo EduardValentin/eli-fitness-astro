@@ -4,3 +4,5 @@ dist
 .env
 .astro
 database.db
+stats.html
+.DS_Store

@@ -46,7 +46,7 @@ const Modal = (props: ModalProps) => {
                     onClose()
                 }
             }}
-            class="fixed flex items-center justify-center top-0 left-0 right-0 z-50 x w-full bg-black/40 overflow-x-hidden overflow-y-auto md:inset-0 h-screen"
+            class="fixed flex flex-wrap items-center justify-center top-0 left-0 right-0 z-50 x w-full bg-black/40 overflow-x-hidden overflow-y-auto md:inset-0 h-screen"
         >
             <div
                 class={clsx(

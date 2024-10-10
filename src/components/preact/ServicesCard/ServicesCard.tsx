@@ -65,7 +65,7 @@ const ServicesCard = (props: Props) => {
                     I'll reach out to you as soon as possible
                 </p>
 
-                <ApplicationForm onSubmit={submitApplication} />
+                <ApplicationForm onSubmit={submitApplication} onCancel={() => setModalOpen(false)} />
             </>
         );
     };

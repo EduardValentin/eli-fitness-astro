@@ -11,6 +11,7 @@ import FormikSelect from '../Select/FormikSelect.tsx';
 interface ApplicationFormProps {
     title?: string;
     onSubmit: (values: SubmitApplicationBody) => Promise<void>;
+    onCancel: () => void;
 }
 const ApplicationForm = (props: ApplicationFormProps) => {
     const { onSubmit, title } = props;
@@ -123,6 +124,7 @@ const ApplicationForm = (props: ApplicationFormProps) => {
                         <Altcha ref={altchaRef} />
 
                         <PrivacyConsent />
+
                         <Button
                             class="border-2 w-full mt-5 border-black"
                             color="white"
@@ -131,6 +133,16 @@ const ApplicationForm = (props: ApplicationFormProps) => {
                         >
                             Apply
                         </Button>
+
+                        <Button
+                            class="border-2 w-full mt-2 border-black"
+                            color="black"
+                            type="button"
+                            onClick={props.onCancel}
+                        >
+                            Cancel
+                        </Button>
+
                     </Form>
                 );
             }}
