@@ -42,9 +42,9 @@ export default function Select({ options, onSelect, label }: SelectProps) {
 							:
 							<>
 								<span className="flex items-center">
-									<span className="block truncate">{selected?.label ?? ''}</span>
+									<span className="block pr-5">{selected?.label ?? ''}</span>
 								</span>
-								<span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center">
+								<span className="pointer-events-none absolute inset-y-0 right-0 flex items-center">
 									<ChevronUpDownIcon aria-hidden="true" className="h-5 w-5 text-black/60" />
 								</span>
 
