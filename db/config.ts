@@ -20,6 +20,9 @@ const Appointment = defineTable({
         goal: column.text({ optional: true }),
         experience: column.text({ optional: true }),
         createdAt: column.date(),
+        plan: column.text(),
+        pack: column.text(),
+        message: column.text(),
     },
 })
 

@@ -3,6 +3,7 @@ import { useCallback, useState } from 'preact/hooks';
 export interface SubmitApplicationBody {
     altcha: string;
     plan: string;
+    pack?: string;
     firstName: string;
     lastName: string;
     gender?: string;
