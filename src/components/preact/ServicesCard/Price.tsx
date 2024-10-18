@@ -3,7 +3,7 @@ import { type ReactElement } from "react"
 interface PriceProps {
     showSavings?: boolean;
     price: number;
-    full?: number;
+    full?: number | undefined;
     monthly?: boolean;
 }
 
@@ -14,6 +14,6 @@ export default function Price({ price, full, monthly, showSavings = true }: Pric
             {full !== undefined ? <><s class='text-xl text-gray-500 font-normal'>{full}</s> {price}</> : price}
         </span>
         {monthly && <span>/month</span>}
-        {full !== undefined && showSavings && <div class="text-sm text-gray-500 mt-5">You save {full - price}€ by buying in packs</div>}
+        {full !== undefined && showSavings && <div class="text-sm text-gray-500 mt-5">You save {full - price}€ by getting this bundle</div>}
     </div>
 }

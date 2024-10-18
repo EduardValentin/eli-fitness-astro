@@ -104,7 +104,7 @@ const PopularServicesCard = (props: Props) => {
                 </div>
             )}
 
-            <div class="font-proxima-nova text-md">Save by buying packs</div>
+            <div class="font-proxima-nova text-md">Save by getting multiple months</div>
             <TabGroup
                 selectedIndex={selectedIndex}
                 onChange={(index) => {
