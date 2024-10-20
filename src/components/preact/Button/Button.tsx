@@ -30,7 +30,6 @@ const Button = (props: Props) => {
     } = props
     const classes = {
         'group block transition-all': true,
-        [className]: true,
         'px-16 py-5 text-xl': size === 'xl',
         'px-5 py-2': size === 'small',
         'bg-white hover:bg-black hover:text-white text-black':
@@ -38,6 +37,8 @@ const Button = (props: Props) => {
         'bg-black hover:bg-white hover:text-black text-white':
             color === 'black',
         'bg-purple-800 hover:bg-purple-900 text-white': color === 'pink',
+
+        [className]: true,
     }
 
     if (href) {
