@@ -7,14 +7,17 @@ import schema from './schema.ts';
 import type { SubmitApplicationBody } from './useSubmitApplication.ts';
 import { PrivacyConsent } from '../PrivacyConsent/PrivacyConsent.tsx';
 import FormikSelect from '../Select/FormikSelect.tsx';
+import type { PlanType } from './ServicesCard.tsx';
+import type { Pack } from './PopularServicesCard.tsx';
 
 interface ApplicationFormProps {
-    title?: string;
+    planType: PlanType;
+    pack: Pack;
     onSubmit: (values: SubmitApplicationBody) => Promise<void>;
     onCancel: () => void;
 }
 const ApplicationForm = (props: ApplicationFormProps) => {
-    const { onSubmit, title } = props;
+    const { onSubmit, planType, pack } = props;
     const altchaRef = useRef<HTMLInputElement>(null);
 
     return (
@@ -30,7 +33,8 @@ const ApplicationForm = (props: ApplicationFormProps) => {
                 email: '',
                 firstName: '',
                 lastName: '',
-                plan: title ?? 'Standard',
+                plan: planType,
+                pack: pack,
             }}
             validateOnChange={false}
             class="flex flex-col gap-2"
