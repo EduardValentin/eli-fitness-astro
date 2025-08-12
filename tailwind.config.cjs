@@ -24,8 +24,7 @@ module.exports = {
                 accent: '#ff0000',
             },
             fontFamily: {
-                'proxima-nova-bold': ['Proxima Nova Bold', 'sans-serif'],
-                'proxima-nova': ['Proxima Nova Regular', 'sans-serif'],
+                raleway: ['Raleway', 'sans-serif'],
             },
             inset: {
                 left: '181px 0px 900px 202px #000000a6',

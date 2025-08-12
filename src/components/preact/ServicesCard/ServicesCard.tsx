@@ -40,7 +40,7 @@ const ServicesCard = (props: Props) => {
                     </h4>
                     <p class="text-[0.85rem]/[150%] text-center mb-6">
                         You have successfully applied for the{' '}
-                        <span class="font-bold font-proxima-nova-bold capitalize">
+                        <span class="font-raleway font-bold capitalize">
                             {planType}
                         </span>{' '}
                         plan. I'll reach out to you as soon as possible to
@@ -59,35 +59,44 @@ const ServicesCard = (props: Props) => {
                     Great choice!
                 </h4>
                 <p class="text-[0.85rem]/[150%] text-center mb-6">
-                    In order to apply, for the <span class='font-bold font-proxima-nova-bold'>{planType}</span> plan, please fill in the information bellow and
-                    I'll reach out to you as soon as possible
+                    In order to apply, for the{' '}
+                    <span class="font-raleway font-bold">{planType}</span> plan,
+                    please fill in the information bellow and I'll reach out to
+                    you as soon as possible
                 </p>
 
-                <ApplicationForm planType={planType} pack='single' onSubmit={submitApplication} onCancel={() => setModalOpen(false)} />
+                <ApplicationForm
+                    planType={planType}
+                    pack="single"
+                    onSubmit={submitApplication}
+                    onCancel={() => setModalOpen(false)}
+                />
             </>
         );
     };
     return (
         <div class="relative flex flex-col gap-5 p-5 text-black md:w-[25rem] w-full bg-white">
-
             {planType && (
-                <div class='flex justify-between'>
-                    <h2 class="font-semibold text-xl capitalize">
-                        {planType}
-                    </h2>
+                <div class="flex justify-between">
+                    <h2 class="font-semibold text-xl capitalize">{planType}</h2>
                 </div>
             )}
-            {price && <Price showSavings={false} monthly price={price} full={fullPrice} />}
+            {price && (
+                <Price
+                    showSavings={false}
+                    monthly
+                    price={price}
+                    full={fullPrice}
+                />
+            )}
             {details && <div class="text-sm text-gray-500">{details}</div>}
             <hr />
 
-            <ul class='flex-1'>
+            <ul class="flex-1">
                 {items.map((item) => (
                     <li class="text-slate-700 p-2 text-sm flex gap-5 justify-start">
                         <CheckIcon class="w-5 shrink-0 fill-green-500" />
-                        <span>
-                            {item}
-                        </span>
+                        <span>{item}</span>
                     </li>
                 ))}
             </ul>
@@ -111,7 +120,7 @@ const ServicesCard = (props: Props) => {
             >
                 <div>{renderFormContent()}</div>
             </Modal>
-        </div >
+        </div>
     );
 };
 

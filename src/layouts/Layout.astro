@@ -22,6 +22,12 @@ const { title, classes } = Astro.props;
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 		<link rel="manifest" href="/site.webmanifest" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+			rel="stylesheet"
+		/>
 
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -47,73 +53,15 @@ const { title, classes } = Astro.props;
 </script>
 
 <style is:global>
-	@font-face {
-		font-family: 'Proxima Nova Light';
-		src: url('/fonts/ProximaNova/ProximaNova-Light.eot');
-		src:
-			local('Proxima Nova Light'),
-			local('ProximaNova-Light'),
-			url('/fonts/ProximaNova/ProximaNova-Light.eot?#iefix') format('embedded-opentype'),
-			url('/fonts/ProximaNova/ProximaNova-Light.woff2') format('woff2'),
-			url('/fonts/ProximaNova/ProximaNova-Light.woff') format('woff'),
-			url('/fonts/ProximaNova/ProximaNova-Light.ttf') format('truetype');
-		font-weight: 300;
-		font-style: normal;
-		font-display: fallback;
-	}
-
-	@font-face {
-		font-family: 'Proxima Nova Bold';
-		src: url('/fonts/ProximaNova/ProximaNova-Bold.eot');
-		src:
-			local('Proxima Nova Bold'),
-			local('ProximaNova-Bold'),
-			url('/fonts/ProximaNova/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
-			url('/fonts/ProximaNova/ProximaNova-Bold.woff2') format('woff2'),
-			url('/fonts/ProximaNova/ProximaNova-Bold.woff') format('woff'),
-			url('/fonts/ProximaNova/ProximaNova-Bold.ttf') format('truetype');
-		font-weight: bold;
-		font-style: normal;
-		font-display: fallback;
-	}
-
-	@font-face {
-		font-family: 'Proxima Nova Regular';
-		src: url('/fonts/ProximaNova/ProximaNova-Regular.eot');
-		src:
-			local('Proxima Nova Regular Italic'),
-			local('ProximaNova-Regular'),
-			url('/fonts/ProximaNova/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
-			url('/fonts/ProximaNova/ProximaNova-Regular.woff2') format('woff2'),
-			url('/fonts/ProximaNova/ProximaNova-Regular.woff') format('woff'),
-			url('/fonts/ProximaNova/ProximaNova-Regular.ttf') format('truetype');
-		font-weight: normal;
-		font-style: italic;
-		font-display: fallback;
-	}
-
-	@font-face {
-		font-family: 'Proxima Nova Semibold';
-		src: url('/fonts/ProximaNova/ProximaNova-Semibold.eot');
-		src:
-			local('Proxima Nova Semibold'),
-			local('ProximaNova-Semibold'),
-			url('/fonts/ProximaNova/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
-			url('/fonts/ProximaNova/ProximaNova-Semibold.woff2') format('woff2'),
-			url('/fonts/ProximaNova/ProximaNova-Semibold.woff') format('woff'),
-			url('/fonts/ProximaNova/ProximaNova-Semibold.ttf') format('truetype');
-		font-weight: 600;
-		font-style: normal;
-		font-display: fallback;
-	}
-
 	html {
-		font-family: 'Proxima Nova Light', sans-serif;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 300;
 	}
 	button,
 	a,
 	label {
-		font-family: 'Proxima Nova Regular', sans-serif;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 400;
 	}
 	h1,
 	h2,
@@ -121,7 +69,8 @@ const { title, classes } = Astro.props;
 	h4,
 	h5,
 	h6 {
-		font-family: 'Proxima Nova Semibold', sans-serif;
+		font-family: 'Raleway', sans-serif;
+		font-weight: 600;
 	}
 	html,
 	body {
